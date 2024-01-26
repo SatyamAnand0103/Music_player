@@ -1,53 +1,6 @@
 //------------------------ Horizontal Song Operations -------------------------//
-import { displayBars, hideBars } from "./File";
-let ListOfMusic2 = [
-  {
-    Name: "Sari Dunia Bhula Denge",
-    Singers: "B.Praak",
-    Movie: "Animal",
-  },
-  {
-    Name: "Hare Krishna ",
-    Singers: "Palak Muchhal",
-    Movie: "Album",
-  },
-  {
-    Name: "O Mahi ",
-    Singers: "Arijit Singh",
-    Movie: "Dunki",
-  },
-  {
-    Name: "Suna Suna Lamha Lamha",
-    Singers: "Shreya Goshal",
-    Movie: "Krishna Cottage",
-  },
-  {
-    Name: "Sansoon Ko",
-    Singers: "Arijit Singh",
-    Movie: "Zid",
-  },
+import { displayBars, hideBars,ListOfMusic } from "./File";
 
-  {
-    Name: "Bhagwan Hai Kahan Re Tu",
-    Singers: "Sonu Nigam",
-    Movie: "PK",
-  },
-  {
-    Name: "Husn",
-    Singers: "Anuv Jain",
-    Movie: "Album",
-  },
-  {
-    Name: "Kal Ho Na Ho",
-    Singers: "Sonu Nigam",
-    Movie: "Kal Ho Na Ho",
-  },
-  {
-    Name: "Tune Jo Na Kaha",
-    Singers: "Mohit Chauhan",
-    Movie: "NeW York",
-  },
-];
 
 let x = document.getElementsByClassName("fadeImg");
 
@@ -136,11 +89,11 @@ export function Hoz1() {
   c[11].load();
 
   e[0].innerHTML =
-    ListOfMusic2[0].Name +
+    ListOfMusic[0].Name +
     "<br>" +
-    ListOfMusic2[0].Singers +
+    ListOfMusic[0].Singers +
     "   , " +
-    ListOfMusic2[0].Movie;
+    ListOfMusic[0].Movie;
 
   document.getElementById(
     "displaySongBox"
@@ -175,11 +128,11 @@ export function Hoz2() {
   c[12].load();
 
   e[0].innerHTML =
-    ListOfMusic2[1].Name +
+    ListOfMusic[1].Name +
     "<br>" +
-    ListOfMusic2[1].Singers +
+    ListOfMusic[1].Singers +
     "   , " +
-    ListOfMusic2[1].Movie;
+    ListOfMusic[1].Movie;
   document.getElementById("displaySongBox").src = require("./images/hk.webp");
 
   if (visiblenPlaying == false) {
@@ -212,11 +165,11 @@ export function Hoz3() {
   c[13].load();
 
   e[0].innerHTML =
-    ListOfMusic2[2].Name +
+    ListOfMusic[2].Name +
     "<br>" +
-    ListOfMusic2[2].Singers +
+    ListOfMusic[2].Singers +
     "   , " +
-    ListOfMusic2[2].Movie;
+    ListOfMusic[2].Movie;
   document.getElementById(
     "displaySongBox"
   ).src = require("./images/Omahi.webp");
@@ -248,11 +201,11 @@ export function Hoz4() {
   c[14].load();
 
   e[0].innerHTML =
-    ListOfMusic2[3].Name +
+    ListOfMusic[3].Name +
     "<br>" +
-    ListOfMusic2[3].Singers +
+    ListOfMusic[3].Singers +
     "   , " +
-    ListOfMusic2[3].Movie;
+    ListOfMusic[3].Movie;
 
   document.getElementById(
     "displaySongBox"
@@ -285,11 +238,11 @@ export function Hoz5() {
   c[15].load();
 
   e[0].innerHTML =
-    ListOfMusic2[4].Name +
+    ListOfMusic[4].Name +
     "<br>" +
-    ListOfMusic2[4].Singers +
+    ListOfMusic[4].Singers +
     "   , " +
-    ListOfMusic2[4].Movie;
+    ListOfMusic[4].Movie;
   document.getElementById("displaySongBox").src = require("./images/zid.webp");
 
   if (visiblenPlaying == false) {
@@ -319,11 +272,11 @@ export function Hoz6() {
   c[16].load();
 
   e[0].innerHTML =
-    ListOfMusic2[5].Name +
+    ListOfMusic[5].Name +
     "<br>" +
-    ListOfMusic2[5].Singers +
+    ListOfMusic[5].Singers +
     "   , " +
-    ListOfMusic2[5].Movie;
+    ListOfMusic[5].Movie;
 
   document.getElementById(
     "displaySongBox"
@@ -356,11 +309,11 @@ export function Hoz7() {
   c[17].load();
 
   e[0].innerHTML =
-    ListOfMusic2[6].Name +
+    ListOfMusic[6].Name +
     "<br>" +
-    ListOfMusic2[6].Singers +
+    ListOfMusic[6].Singers +
     "   , " +
-    ListOfMusic2[6].Movie;
+    ListOfMusic[6].Movie;
   document.getElementById("displaySongBox").src = require("./images/husn.webp");
 
   if (visiblenPlaying == false) {
@@ -390,11 +343,11 @@ export function Hoz8() {
   c[18].load();
 
   e[0].innerHTML =
-    ListOfMusic2[7].Name +
+    ListOfMusic[7].Name +
     "<br>" +
-    ListOfMusic2[7].Singers +
+    ListOfMusic[7].Singers +
     "   , " +
-    ListOfMusic2[7].Movie;
+    ListOfMusic[7].Movie;
   document.getElementById(
     "displaySongBox"
   ).src = require("./images/kl ho na ho.webp");
@@ -426,11 +379,11 @@ export function Hoz9() {
   c[1].load();
 
   e[0].innerHTML =
-    ListOfMusic2[8].Name +
+    ListOfMusic[8].Name +
     "<br>" +
-    ListOfMusic2[8].Singers +
+    ListOfMusic[8].Singers +
     "   , " +
-    ListOfMusic2[8].Movie;
+    ListOfMusic[8].Movie;
   document.getElementById(
     "displaySongBox"
   ).src = require("./images/tunejo.webp");

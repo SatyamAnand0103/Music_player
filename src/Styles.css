@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color:#0B0F12;
+  background-color: #0b0f12;
 }
 .containerBox {
   border: 2px solid black;
@@ -57,7 +57,7 @@ input[type="search"] {
   color: aliceblue;
   width: 70em;
   margin: auto;
-  background-color: #0B0F12;
+  background-color: #0b0f12;
 }
 .Listofitems a {
   color: white;
@@ -66,7 +66,6 @@ input[type="search"] {
 .Listofitems a:hover {
   color: grey;
   text-decoration: underline;
-
 }
 
 .SlideShowBox {
@@ -77,7 +76,7 @@ input[type="search"] {
   background-color: black;
   width: 112em;
   margin: auto;
-  background-color: #0B0F12;
+  background-color: #0b0f12;
 }
 .carousel img {
   height: 250px;
@@ -86,8 +85,8 @@ input[type="search"] {
   border-radius: 20px;
 }
 
-.carousel img:hover{
-cursor: pointer;
+.carousel img:hover {
+  cursor: pointer;
 }
 
 .MusicListBigBox {
@@ -288,24 +287,26 @@ cursor: pointer;
   display: none;
 }
 .SongsitemInLine {
-    /* border-image: linear-gradient(45deg, rgb(0, 143, 104), rgb(250, 224, 66)) 1; */
-    width: 203px;
-    flex: 0 0 auto;
-    box-sizing: border-box;
-    background-size: 300px 100px;
-    margin-top: 18px;
-    height: 270px;
-    margin-left: 12px;
+  /* border-image: linear-gradient(45deg, rgb(0, 143, 104), rgb(250, 224, 66)) 1; */
+  width: 203px;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  background-size: 300px 100px;
+  margin-top: 18px;
+  height: 270px;
+  margin-left: 12px;
 }
-.SongsitemInLine img {
-  height: 200px;
+.SongsitemInLine:hover {
+opacity:0.5;
 }
 
-.SongsitemInLine:hover {
+/* .SongsitemInLine:hover {
   transition: 0.5s;
   opacity: 0.6;
+} */
+.songs_img {
+  height: 182px;
 }
-
 .PopularSongs {
   height: 16px;
   font-size: 23px;
@@ -322,7 +323,7 @@ cursor: pointer;
   color: white;
   background-color: rgb(37 40 59);
   font-weight: 300;
-  width: 198px;
+  width: 182px;
 }
 .SongsitemInLine h6 {
   text-align: center;
@@ -395,20 +396,20 @@ cursor: pointer;
   border-radius: 6px;
 }
 .SongDetails {
-    /* border: 2px solid white; */
-    height: 58px;
-    width: 200px;
-    position: relative;
-    left: 111px;
-    top: -160px;
-    /* margin: auto; */
-    /* text-align: center; */
-    box-sizing: border-box;
-    font-size: 12px;
-    color: aliceblue;
-    font-weight: 600;
-    box-sizing: border-box;
-    padding-top: 7px;
+  /* border: 2px solid white; */
+  height: 58px;
+  width: 200px;
+  position: relative;
+  left: 111px;
+  top: -160px;
+  /* margin: auto; */
+  /* text-align: center; */
+  box-sizing: border-box;
+  font-size: 12px;
+  color: aliceblue;
+  font-weight: 600;
+  box-sizing: border-box;
+  padding-top: 7px;
 }
 .Range {
   /* border: 3px solid white; */
@@ -541,15 +542,35 @@ input[type="range"] {
   text-decoration: none;
 }
 
-.OnFading img {
+.OnFading {
+  /* border: 2px solid white; */
   position: relative;
-  height: 49px;
-  top: -190px;
-  left: 74px;
-  border-radius: 26px;
-  /* display: none; */
+  height: 250px;
+  top: -255px;
+  left: -9px;
 }
-
+/*  */
+.button img {
+  height: 40px;
+  width: 40px;
+}
 .Artists a {
   text-decoration: none;
+}
+.fadeImg {
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top: 80px;
+  left: 79px;
+  visibility: hidden;
+}
+  
+.fadeImg:hover {
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top: 80px;
+  left: 79px;
+  visibility: visible;
 }

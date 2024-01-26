@@ -1,9 +1,9 @@
 import React from "react";
-import { MasterPlayOnLoad } from "./File";
+// import { MasterPlayOnLoad } from "./File";
 function MasterPlay() {
-  let callme = () => {
-    MasterPlayOnLoad();
-  };
+  // let callme = () => {
+  //   MasterPlayOnLoad();
+  // };
 
   return (
     <>
@@ -17,7 +17,7 @@ function MasterPlay() {
             src={require("./images/mainplay.png")}
             className="PlayPauseicon"
             id="MasterPlay"
-            onClick={callme}
+            // onClick={callme}
           ></img>
           <img
             src={require("./images/forward (2).jpeg")}

@@ -1,571 +1,179 @@
-// import Audio from "./Audio.js";
-let ListOfMusic1 = [
+let musicList_1 = [
   {
-    Name: "Tera Hi Bas Hona Chaahoon",
-    Singers: "JoJo",
-    Movie: "Haunted",
+    id: "01",
+    audioPath: require("./audios/Tera Hi.mp3"),
+    name: "Tera Hi Bas Hona Chaahoon",
+    artist: "JoJo",
+    movie: "Haunted",
+    imgPath: require("./images/haunted.webp"),
+    playImgPath: require("./images/play.png"),
   },
   {
-    Name: "Hamari Adhuri Kahani",
-    Singers: "Arijit Singh",
-    Movie: "Hamari Adhuri Kahani",
+    id: "02",
+    audioPath: require("./audios/Hmk.mp3"),
+    name: "Hamari Adhuri Kahani",
+    artist: "Arijit Singh",
+    movie: "Hamari Adhuri Kahani",
+    imgPath: require("./images/hak.webp"),
+    playImgPath: require("./images/play.png"),
   },
   {
-    Name: "Jab Bhi Teri Yaad",
-    Singers: "Ishoj",
-    Movie: "Album",
+    id: "03",
+    audioPath: require("./audios/Jab Bhi Teri.mp3"),
+    name: "Jab Bhi Teri Yaad",
+    artist: "Ishoj",
+    movie: "Album",
+    imgPath: require("./images/jty.webp"),
+    playImgPath: require("./images/play.png"),
   },
   {
-    Name: "Mohabbat Ho Na Jaye",
-    Singers: "Kumar Sanu,Alka Yagini",
-    Movie: "Kasoor",
+    id: "04",
+    audioPath: require("./audios/Mohabbat.mp3"),
+    name: "Mohabbat Ho Na Jaye",
+    artist: "Kumar Sanu,Alka Yagini",
+    movie: "Kasoor",
+    imgPath: require("./images/kasoor.webp"),
+    playImgPath: require("./images/play.png"),
   },
   {
-    Name: "Khamoshiyaan",
-    Singers: "Arijit Singh",
-    Movie: "Khamoshiyaan",
+    id: "05",
+    audioPath: require("./audios/Kham.mp3"),
+    name: "Khamoshiyaan",
+    artist: "Arijit Singh",
+    movie: "Khamoshiyaan",
+    imgPath: require("./images/kham.webp"),
+    playImgPath: require("./images/play.png"),
   },
   {
-    Name: "Humnava",
-    Singers: "Papon",
-    Movie: "Hamari Adhuri Kahani",
+    id: "06",
+    audioPath: require("./audios/Hmk.mp3"),
+    name: "Humnava",
+    artist: "Papon",
+    movie: "Hamari Adhuri Kahani",
+    imgPath: require("./images/hh.webp"),
+    playImgPath: require("./images/play.png"),
   },
   {
-    Name: "Naina",
-    Singers: "Arijit Singh",
-    Movie: "Dangal",
+    id: "07",
+    audioPath: require("./audios/Hmk.mp3"),
+    name: "Naina",
+    artist: "Arijit Singh",
+    movie: "Dangal",
+    imgPath: require("./images/naina.webp"),
+    playImgPath: require("./images/play.png"),
   },
   {
-    Name: "Mai Dhoondne Ko Zamane Me",
-    Singers: "Arijit Singh",
-    Movie: "Heartless",
+    id: "08",
+    audioPath: require("./audios/Hmk.mp3"),
+    name: "Mai Dhoondne Ko Zamane Me",
+    artist: "Arijit Singh",
+    movie: "Heartless",
+    imgPath: require("./images/heartless.webp"),
+    playImgPath: require("./images/play.png"),
   },
   {
-    Name: "Pal Pal Dil K Paas",
-    Singers: "Kishore Kumar",
-    Movie: "BlackMail",
+    id: "09",
+    audioPath: require("./audios/Hmk.mp3"),
+    name: "Pal Pal Dil K Paas",
+    artist: "Kishore Kumar",
+    movie: "BlackMail",
+    imgPath: require("./images/dil k paas.jpg"),
+    playImgPath: require("./images/play.png"),
   },
   {
-    Name: "Milne Hai Mujhse Aai",
-    Singers: "Arijit Singh",
-    Movie: "Ashique 2",
+    id: "10",
+    audioPath: require("./audios/Hmk.mp3"),
+    name: "Milne Hai Mujhse Aai",
+    artist: "Arijit Singh",
+    movie: "Ashique 2",
+    imgPath: require("./images/milne hai.jpg"),
+    playImgPath: require("./images/play.png"),
   },
   {
-    Name: "Shiddat Bana Lu Tujhe",
-    Singers: "Manan Bhardwaj",
-    Movie: "Shiddat",
+    id: "11",
+    audioPath: require("./audios/Hmk.mp3"),
+    name: "Shiddat Bana Lu Tujhe",
+    artist: "Manan Bhardwaj",
+    movie: "Shiddat",
+    imgPath: require("./images/shiddat.jpg"),
+    playImgPath: require("./images/play.png"),
   },
 ];
 
-let displayBars = () => {
-  document.getElementById("vibration").style.display = "block";
-};
-let hideBars = () => {
-  document.getElementById("vibration").style.display = "none";
-};
+let musicList_2 = [
+  {
+    id: "12",
+    audioPath: require("./audios/SariDunia.mp3"),
+    name: "Sari Dunia ",
+    artist: "B.Praak",
+    movie: "Animal",
+    imgPath: require("./images/sari dunia.webp"),
+  },
+  {
+    id: "13",
+    audioPath: require("./audios/HareKrishna.mp3"),
+    name: "Hare Krishna ",
+    artist: "Palak Muchhal",
+    movie: "Album",
+    imgPath: require("./images/hk.webp"),
+  },
+  {
+    id: "14",
+    audioPath: require("./audios/OMahi.mp3"),
+    name: "O Mahi ",
+    artist: "Arijit Singh",
+    movie: "Dunki",
+    imgPath: require("./images/Omahi.webp"),
+  },
+  {
+    id: "15",
+    audioPath: require("./audios/SunaSuna.mp3"),
+    name: "Suna Suna",
+    artist: "Shreya Goshal",
+    movie: "Krishna Cottage",
+    imgPath: require("./images/krishnacottage.webp"),
+  },
+  {
+    id: "16",
+    audioPath: require("./audios/SaansonKo.mp3"),
+    name: "Sansoon Ko",
+    artist: "Arijit Singh",
+    movie: "Zid",
+    imgPath: require("./images/zid.webp"),
+  },
 
-export { displayBars, hideBars,ListOfMusic1 };
+  {
+    id: "17",
+    audioPath: require("./audios/Bhagwankahan.mp3"),
+    name: "Bhagwan Hai",
+    artist: "Sonu Nigam",
+    movie: "PK",
+    imgPath: require("./images/bhagwan.webp"),
+  },
+  {
+    id: "18",
+    audioPath: require("./audios/Husn.mp3"),
+    name: "Husn",
+    artist: "Anuv Jain",
+    movie: "Album",
+    imgPath: require("./images/husn.webp"),
+  },
+  {
+    id: "19",
+    name: "Kal Ho Na Ho", 
+    audioPath: require("./audios/KalHoNaHo.mp3"),
+    artist: "Sonu Nigam",
+    movie: "Kal Ho Na Ho",
+    imgPath: require("./images/kl ho na ho.webp"),
+  },
+  {
+    id: "20",
+    audioPath: require("./audios/Tune.mp3"),
+    name: "Tune Jo Na Kaha",
+    artist: "Mohit Chauhan",
+    movie: "NeW York",
+    imgPath: require("./images/tunejo.webp"),
+  },
+];
 
-var play = false;
-export function MasterPlayOnLoad() {
-  if (play == false) {
-    for (let i = 0; i < a.length; i++) {
-      c[i].pause();
-    }
-
-    document.getElementById("MasterPlay").src = require("./images/pause.png");
-    setTimeout(() => {
-      displayBars();
-    }, 300);
-
-    //  c[0].play(); // by default first song will play;
-    //console.log(c[0].timeupdate());
-    play = true;
-  } else if (play == true) {
-    for (let i = 0; i < a.length; i++) {
-      c[i].pause();
-    }
-    document.getElementById(
-      "MasterPlay"
-    ).src = require("./images/mainplay.png");
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "none";
-      hideBars();
-    }, 300);
-    //c[0].pause();
-    play = false;
-  }
-}
-
-//for the songs Items in left side
-let a = document.getElementsByClassName("songsItem");
-let b = document.getElementsByClassName("PlayIcon");
-let c = document.getElementsByClassName("myAudios");
-let d = document.getElementsByClassName("PlayPauseicon");
-let e = document.getElementsByClassName("SongDetails");
-
-// c[1].addEventListener("ontimeupdate", (event) => {
-//   console.log(event);
-// });
-export function forlistOne() {
-  for (let i = 0; i < a.length; i++) {
-    a[i].style.border = "none";
-    b[i].src = require("./images/play.png");
-  }
-  for (let i = 0; i < c.length; i++) {
-    c[i].pause();
-  }
-  document.getElementById(
-    "displaySongBox"
-  ).src = require("./images/haunted.webp");
-  c[0].load();
-
-  a[0].style.border = "1px solid white";
-  b[0].src = require("./images/pauseicon.png");
-  e[0].innerHTML =
-    ListOfMusic1[0].Name +
-    "<br>" +
-    ListOfMusic1[0].Singers +
-    "   , " +
-    ListOfMusic1[0].Movie;
-
-  // d[0].src = require("./images/pause.png");
-  //c[0].play();
-
-  // ---------
-  if (play == false) {
-    b[0].src = require("./images/pauseicon.png");
-    d[0].src = require("./images/pause.png");
-    c[0].play();
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "block";
-      displayBars();
-    }, 300);
-    play = true;
-  } else if (play == true) {
-    b[0].src = require("./images/play.png");
-    d[0].src = require("./images/mainplay.png");
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "none";
-      hideBars();
-    }, 300);
-    c[0].pause();
-    play = false;
-  }
-}
-
-export function forlistTwo() {
-  for (let i = 0; i < a.length; i++) {
-    a[i].style.border = "none";
-    b[i].src = require("./images/play.png");
-  }
-  for (let i = 0; i < c.length; i++) {
-    c[i].pause();
-  }
-  c[1].load();
-
-  document.getElementById("displaySongBox").src = require("./images/hak.webp");
-  a[1].style.border = "1px solid white";
-  b[1].src = require("./images/pauseicon.png");
-  e[0].innerHTML =
-    ListOfMusic1[1].Name +
-    "<br>" +
-    ListOfMusic1[1].Singers +
-    "   , " +
-    ListOfMusic1[1].Movie;
-
-  // ---------
-  if (play == false) {
-    b[1].src = require("./images/pauseicon.png");
-    d[0].src = require("./images/pause.png");
-    c[1].play();
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "block";
-      displayBars();
-    }, 300);
-    play = true;
-  } else if (play == true) {
-    d[0].src = require("./images/mainplay.png");
-
-    b[1].src = require("./images/play.png");
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "none";
-      hideBars();
-    }, 300);
-    play = false;
-  }
-}
-
-export function forlistThree() {
-  for (let i = 0; i < a.length; i++) {
-    a[i].style.border = "none";
-    b[i].src = require("./images/play.png");
-  }
-  for (let i = 0; i < c.length; i++) {
-    c[i].pause();
-  }
-  c[2].load();
-
-  document.getElementById("displaySongBox").src = require("./images/jty.webp");
-  a[2].style.border = "1px solid white";
-  b[2].src = require("./images/pauseicon.png");
-  e[0].innerHTML =
-    ListOfMusic1[2].Name +
-    "<br>" +
-    ListOfMusic1[2].Singers +
-    "   , " +
-    ListOfMusic1[2].Movie;
-
-  // ---------
-  if (play == false) {
-    b[2].src = require("./images/pauseicon.png");
-    d[0].src = require("./images/pause.png");
-    c[2].play();
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "block";
-      displayBars();
-    }, 300);
-    play = true;
-  } else if (play == true) {
-    d[0].src = require("./images/mainplay.png");
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "none";
-      hideBars();
-    }, 300);
-    b[2].src = require("./images/play.png");
-    play = false;
-  }
-}
-
-export function forlistFour() {
-  for (let i = 0; i < a.length; i++) {
-    a[i].style.border = "none";
-    b[i].src = require("./images/play.png");
-  }
-  for (let i = 0; i < c.length; i++) {
-    c[i].pause();
-  }
-  c[3].load();
-
-  document.getElementById(
-    "displaySongBox"
-  ).src = require("./images/kasoor.webp");
-  a[3].style.border = "1px solid white";
-  b[3].src = require("./images/pauseicon.png");
-  e[0].innerHTML =
-    ListOfMusic1[3].Name +
-    "<br>" +
-    ListOfMusic1[3].Singers +
-    "   , " +
-    ListOfMusic1[3].Movie;
-
-  // ---------
-  if (play == false) {
-    b[3].src = require("./images/pauseicon.png");
-    d[0].src = require("./images/pause.png");
-    c[3].play();
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "block";
-      displayBars();
-    }, 300);
-    play = true;
-  } else if (play == true) {
-    d[0].src = require("./images/mainplay.png");
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "none";
-      hideBars();
-    }, 300);
-    b[3].src = require("./images/play.png");
-    play = false;
-  }
-}
-
-export function forlistFive() {
-  for (let i = 0; i < a.length; i++) {
-    a[i].style.border = "none";
-    b[i].src = require("./images/play.png");
-  }
-  c[4].load();
-
-  document.getElementById("displaySongBox").src = require("./images/kham.webp");
-  for (let i = 0; i < c.length; i++) {
-    c[i].pause();
-  }
-  c[4].load();
-
-  a[4].style.border = "1px solid white";
-  b[4].src = require("./images/pauseicon.png");
-  e[0].innerHTML =
-    ListOfMusic1[4].Name +
-    "<br>" +
-    ListOfMusic1[4].Singers +
-    "   , " +
-    ListOfMusic1[4].Movie;
-
-  // ---------
-  if (play == false) {
-    b[4].src = require("./images/pauseicon.png");
-    d[0].src = require("./images/pause.png");
-    c[4].play();
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "block";
-      displayBars();
-    }, 300);
-    play = true;
-  } else if (play == true) {
-    d[0].src = require("./images/mainplay.png");
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "none";
-      hideBars();
-    }, 300);
-    b[4].src = require("./images/play.png");
-    play = false;
-  }
-}
-
-export function forlistSix() {
-  for (let i = 0; i < a.length; i++) {
-    a[i].style.border = "none";
-    b[i].src = require("./images/play.png");
-  }
-
-  document.getElementById("displaySongBox").src = require("./images/hh.webp");
-  for (let i = 0; i < c.length; i++) {
-    c[i].pause();
-  }
- c[5].load();
-
-  a[5].style.border = "1px solid white";
-  b[5].src = require("./images/pauseicon.png");
-  e[0].innerHTML =
-    ListOfMusic1[5].Name +
-    "<br>" +
-    ListOfMusic1[5].Singers +
-    "   , " +
-    ListOfMusic1[5].Movie;
-  // ---------
-  if (play == false) {
-    b[5].src = require("./images/pauseicon.png");
-    d[0].src = require("./images/pause.png");
-    c[5].play();
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "block";
-      displayBars();
-    }, 300);
-    play = true;
-  } else if (play == true) {
-    d[0].src = require("./images/mainplay.png");
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "none";
-      hideBars();
-    }, 300);
-    b[5].src = require("./images/play.png");
-    play = false;
-  }
-}
-
-export function forlistSeven() {
-  for (let i = 0; i < a.length; i++) {
-    a[i].style.border = "none";
-    b[i].src = require("./images/play.png");
-  }
-  document.getElementById(
-    "displaySongBox"
-  ).src = require("./images/naina.webp");
-  for (let i = 0; i < c.length; i++) {
-    c[6].pause();
-  }
-  c[6].load();
-  a[6].style.border = "1px solid white";
-  b[6].src = require("./images/pauseicon.png");
-  e[0].innerHTML =
-    ListOfMusic1[6].Name +
-    "<br>" +
-    ListOfMusic1[6].Singers +
-    "   , " +
-    ListOfMusic1[6].Movie;
-  // ---------
-  if (play == false) {
-    b[6].src = require("./images/pauseicon.png");
-    d[0].src = require("./images/pause.png");
-    c[6].play();
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "block";
-      displayBars();
-    }, 300);
-    play = true;
-  } else if (play == true) {
-    d[0].src = require("./images/mainplay.png");
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "none";
-      hideBars();
-    }, 300);
-    b[6].src = require("./images/play.png");
-    play = false;
-  }
-}
-
-export function forlistEight() {
-  for (let i = 0; i < a.length; i++) {
-    a[i].style.border = "none";
-    b[i].src = require("./images/play.png");
-  }
-  document.getElementById(
-    "displaySongBox"
-  ).src = require("./images/heartless.webp");
-  for (let i = 0; i < c.length; i++) {
-    c[i].pause();
-  }
-  c[7].load();
-  a[7].style.border = "1px solid white";
-  b[7].src = require("./images/pauseicon.png");
-  e[0].innerHTML =
-    ListOfMusic1[7].Name +
-    "<br>" +
-    ListOfMusic1[7].Singers +
-    "   , " +
-    ListOfMusic1[7].Movie;
-  // ---------
-  if (play == false) {
-    b[7].src = require("./images/pauseicon.png");
-    d[0].src = require("./images/pause.png");
-    c[7].play();
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "block";
-      displayBars();
-    }, 300);
-    play = true;
-  } else if (play == true) {
-    d[0].src = require("./images/mainplay.png");
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "none";
-      hideBars();
-    }, 300);
-    b[7].src = require("./images/play.png");
-    play = false;
-  }
-}
-
-export function forlistNine() {
-  for (let i = 0; i < a.length; i++) {
-    a[i].style.border = "none";
-    b[i].src = require("./images/play.png");
-  }
-  document.getElementById(
-    "displaySongBox"
-  ).src = require("./images/dil k paas.jpg");
-  for (let i = 0; i < c.length; i++) {
-    c[i].pause();
-  }
-  c[8].load();
-  a[8].style.border = "1px solid white";
-  b[8].src = require("./images/pauseicon.png");
-  e[0].innerHTML =
-    ListOfMusic1[8].Name +
-    "<br>" +
-    ListOfMusic1[8].Singers +
-    "   , " +
-    ListOfMusic1[8].Movie;
-  // ---------
-  if (play == false) {
-    b[8].src = require("./images/pauseicon.png");
-    d[0].src = require("./images/pause.png");
-    c[8].play();
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "block";
-      displayBars();
-    }, 300);
-    play = true;
-  } else if (play == true) {
-    d[0].src = require("./images/mainplay.png");
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "none";
-      hideBars();
-    }, 300);
-    b[8].src = require("./images/play.png");
-    play = false;
-  }
-}
-
-export function forlistTen() {
-  for (let i = 0; i < a.length; i++) {
-    a[i].style.border = "none";
-    b[i].src = require("./images/play.png");
-  }
-  document.getElementById(
-    "displaySongBox"
-  ).src = require("./images/milne hai.jpg");
-  for (let i = 0; i < c.length; i++) {
-    c[i].pause();
-  }
-  c[9].load();
-  a[9].style.border = "1px solid white";
-  b[9].src = require("./images/pauseicon.png");
-  e[0].innerHTML =
-    ListOfMusic1[9].Name +
-    "<br>" +
-    ListOfMusic1[9].Singers +
-    "   , " +
-    ListOfMusic1[9].Movie;
-  // ---------
-  if (play == false) {
-    b[9].src = require("./images/pauseicon.png");
-    d[0].src = require("./images/pause.png");
-    c[9].play();
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "block";
-      displayBars();
-    }, 300);
-    play = true;
-  } else if (play == true) {
-    d[0].src = require("./images/mainplay.png");
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "none";
-      hideBars();
-    }, 300);
-    b[9].src = require("./images/play.png");
-    play = false;
-  }
-}
-
-export function forlistEleven() {
-  for (let i = 0; i < a.length; i++) {
-    a[i].style.border = "none";
-    b[i].src = require("./images/play.png");
-  }
-  document.getElementById(
-    "displaySongBox"
-  ).src = require("./images/shiddat.jpg");
-  for (let i = 0; i < c.length; i++) {
-    c[i].pause();
-  }
-  c[10].load();
-  a[10].style.border = "1px solid white";
-  b[10].src = require("./images/pauseicon.png");
-  e[0].innerHTML =
-    ListOfMusic1[10].Name +
-    "<br>" +
-    ListOfMusic1[10].Singers +
-    "   , " +
-    ListOfMusic1[10].Movie;
-  // ---------
-  if (play == false) {
-    b[10].src = require("./images/pauseicon.png");
-    d[0].src = require("./images/pause.png");
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "block";
-      displayBars();
-    }, 300);
-    c[10].play();
-
-    play = true;
-  } else if (play == true) {
-    d[0].src = require("./images/mainplay.png");
-    setTimeout(() => {
-      // document.getElementById("vibration").style.display = "none";
-      hideBars();
-    }, 300);
-    b[10].src = require("./images/play.png");
-    play = false;
-  }
-}
+export { musicList_1, musicList_2 };
