@@ -297,13 +297,18 @@ input[type="search"] {
   margin-left: 12px;
 }
 .SongsitemInLine:hover {
-opacity:0.5;
+  opacity: 0.6;
 }
 
-/* .SongsitemInLine:hover {
-  transition: 0.5s;
-  opacity: 0.6;
-} */
+.fadeImg {
+  height: 45px;
+  width: 45px;
+  position: relative;
+  top: 6px;
+  left: 8px;
+  display: none;
+}
+
 .songs_img {
   height: 182px;
 }
@@ -332,6 +337,18 @@ opacity:0.5;
   font-weight: 300;
   font-style: italic;
 }
+
+
+.OnFading {
+  /* border: 2px solid white; */
+  position: relative;
+  height: 58px;
+  top: -181px;
+  left: -6px;
+  width: 58px;
+  margin: auto;
+}
+
 .PlayIcon {
   height: 50px;
   width: 50px;
@@ -341,75 +358,87 @@ opacity:0.5;
   margin-right: 52px;
 }
 .bottomBox {
-  /* border: 2px solid white; */
   height: 5em;
-  width: 100%;
   background-color: rgba(33, 37, 45, var(--tw-bg-opacity));
-  position: fixed;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  width: 92em;
+  margin: auto;
+  margin-top: 0px;
+  border-bottom: 1px solid white;
+  position: relative;
+  bottom: -26em;
+
 }
 .PlayPauseicon {
+
   height: 3em;
   margin-top: 16px;
 }
-.backwardicon {
+#backwardicon {
+
   height: 3em;
   margin-top: 16px;
+  position: relative;
+  left:-26px;
 }
-.forwardicon {
+#forwardicon {
+
   height: 3em;
   margin-top: 16px;
+  position: relative;
+  right: -20px;
 }
 .AllIconsOfSongs {
   display: flex;
   height: 6em;
   justify-content: center;
-  background-color: #21252e;
+  /* background-color: #21252e; */
+  position: relative;
+  left: 35em;
+  width: -4px;
 }
 .displaySongPoster {
-  /* border: 2px solid white; */
-  /* border: 2px solid white; */
-  height: 5em;
-  width: 88px;
-  /* margin: auto; */
-  position: relative;
-  top: -80px;
-  left: 50px;
+     /* border: 2px solid white; */
+     /* border: 2px solid white; */
+     height: 51px;
+     width: 55px;
+     position: relative;
+     top: -80px;
+     left: 93px;
 }
 
-#displaySongBox {
+.displaySongBox {
   height: 3em;
   width: 52px;
   border-radius: 6px;
+  border: 0px;
+  display: none;
 }
 
 #vibration {
-  height: 48px;
-  width: 52px;
+  height: 29px;
+  width: 26px;
   position: relative;
-  top: -48px;
-  left: 0px;
+  top: -35px;
+  left: -46px;
   opacity: 0.5;
   display: none;
-  border-radius: 6px;
+  /* border-radius: 6px; */
 }
 .SongDetails {
-  /* border: 2px solid white; */
-  height: 58px;
-  width: 200px;
-  position: relative;
-  left: 111px;
-  top: -160px;
-  /* margin: auto; */
-  /* text-align: center; */
-  box-sizing: border-box;
-  font-size: 12px;
-  color: aliceblue;
-  font-weight: 600;
-  box-sizing: border-box;
-  padding-top: 7px;
+    /* border: 2px solid white; */
+    height: 58px;
+    width: 200px;
+    position: relative;
+    left: 154px;
+    top: -125px;
+    /* margin: auto; */
+    /* text-align: center; */
+    box-sizing: border-box;
+    font-size: 12px;
+    color: aliceblue;
+    font-weight: 600;
+    box-sizing: border-box;
+    padding-top: 7px;
 }
 .Range {
   /* border: 3px solid white; */
@@ -418,7 +447,7 @@ opacity:0.5;
   margin: auto;
   text-align: center;
   position: relative;
-  top: -250px;
+  top: -228px;
 }
 input[type="range"] {
   border: 2px solid white;
@@ -542,13 +571,6 @@ input[type="range"] {
   text-decoration: none;
 }
 
-.OnFading {
-  /* border: 2px solid white; */
-  position: relative;
-  height: 250px;
-  top: -255px;
-  left: -9px;
-}
 /*  */
 .button img {
   height: 40px;
@@ -556,21 +578,4 @@ input[type="range"] {
 }
 .Artists a {
   text-decoration: none;
-}
-.fadeImg {
-  height: 40px;
-  width: 40px;
-  position: relative;
-  top: 80px;
-  left: 79px;
-  visibility: hidden;
-}
-  
-.fadeImg:hover {
-  height: 40px;
-  width: 40px;
-  position: relative;
-  top: 80px;
-  left: 79px;
-  visibility: visible;
 }
