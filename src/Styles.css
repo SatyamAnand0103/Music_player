@@ -266,6 +266,7 @@ input[type="search"] {
   color: rgba(217, 31, 38, 255);
   background-color: white;
 }
+
 #btn2:hover {
   border: 2px solid white;
 
@@ -278,39 +279,40 @@ input[type="search"] {
   margin-top: 54px;
   display: flex;
   /* border: 2px solid white; */
-  height: 18em;
   overflow-x: auto;
-  height: 20em;
+  height: 15em;
   overflow-y: hidden;
+  padding-top: 12px;
 }
 ::-webkit-scrollbar {
   display: none;
 }
 .SongsitemInLine {
   /* border-image: linear-gradient(45deg, rgb(0, 143, 104), rgb(250, 224, 66)) 1; */
-  width: 203px;
+  width: 150px;
   flex: 0 0 auto;
   box-sizing: border-box;
   background-size: 300px 100px;
-  margin-top: 18px;
-  height: 270px;
-  margin-left: 12px;
+  margin-top: 6px;
+  height: 217px;
+  margin-left: 22px;
 }
 .SongsitemInLine:hover {
-  opacity: 0.6;
+  border-bottom: 1px solid white;
 }
 
 .fadeImg {
-  height: 45px;
-  width: 45px;
+  height: 35px;
+  width: 35px;
   position: relative;
-  top: 6px;
-  left: 8px;
+  top: 22px;
+  left: 11px;
   display: none;
+  border-radius: 20px;
 }
 
 .songs_img {
-  height: 182px;
+  height: 145px;
 }
 .PopularSongs {
   height: 16px;
@@ -322,13 +324,14 @@ input[type="search"] {
   top: 0px;
   /* position: relative; */
 }
+
 .SongsitemInLine h5 {
   margin-top: 10px;
   text-align: center;
   color: white;
   background-color: rgb(37 40 59);
   font-weight: 300;
-  width: 182px;
+  width: 145px;
 }
 .SongsitemInLine h6 {
   text-align: center;
@@ -337,7 +340,6 @@ input[type="search"] {
   font-weight: 300;
   font-style: italic;
 }
-
 
 .OnFading {
   /* border: 2px solid white; */
@@ -360,32 +362,55 @@ input[type="search"] {
 .bottomBox {
   height: 5em;
   background-color: rgba(33, 37, 45, var(--tw-bg-opacity));
-  width: 92em;
+  width: 80em;
   margin: auto;
   margin-top: 0px;
   border-bottom: 1px solid white;
   position: relative;
-  bottom: -26em;
-
+  bottom: -18em;
 }
 .PlayPauseicon {
-
   height: 3em;
   margin-top: 16px;
 }
 #backwardicon {
-
   height: 3em;
   margin-top: 16px;
   position: relative;
-  left:-26px;
+  left: -26px;
 }
 #forwardicon {
-
   height: 3em;
   margin-top: 16px;
   position: relative;
   right: -20px;
+}
+
+#musicIcon img {
+  position: absolute;
+  /* border: 2px solid white; */
+  height: 40px;
+  width: 40px;
+  top: 45px;
+  top: 20px;
+  left: 400px;
+}
+
+#soundIcon {
+  /* border: 2px solid white; */
+  height: 34px;
+  width: 235px;
+  position: absolute;
+  left: 56em;
+  top: 25px;
+}
+#soundIcon img {
+  /* border: 2px solid white; */
+  height: 30px;
+  width: 50px;
+  top: 45px;
+  top: 26px;
+  left: 62em;
 }
 .AllIconsOfSongs {
   display: flex;
@@ -397,13 +422,13 @@ input[type="search"] {
   width: -4px;
 }
 .displaySongPoster {
-     /* border: 2px solid white; */
-     /* border: 2px solid white; */
-     height: 51px;
-     width: 55px;
-     position: relative;
-     top: -80px;
-     left: 93px;
+  /* border: 2px solid white; */
+  /* border: 2px solid white; */
+  height: 51px;
+  width: 55px;
+  position: relative;
+  top: -80px;
+  left: 166px;
 }
 
 .displaySongBox {
@@ -411,7 +436,7 @@ input[type="search"] {
   width: 52px;
   border-radius: 6px;
   border: 0px;
-  display: none;
+  /* display: none; */
 }
 
 #vibration {
@@ -421,24 +446,24 @@ input[type="search"] {
   top: -35px;
   left: -46px;
   opacity: 0.5;
-  display: none;
+  /* display: none; */
   /* border-radius: 6px; */
 }
 .SongDetails {
-    /* border: 2px solid white; */
-    height: 58px;
-    width: 200px;
-    position: relative;
-    left: 154px;
-    top: -125px;
-    /* margin: auto; */
-    /* text-align: center; */
-    box-sizing: border-box;
-    font-size: 12px;
-    color: aliceblue;
-    font-weight: 600;
-    box-sizing: border-box;
-    padding-top: 7px;
+  /* border: 2px solid white; */
+  height: 58px;
+  width: 200px;
+  position: relative;
+  left: 234px;
+  top: -125px;
+  /* margin: auto; */
+  /* text-align: center; */
+  box-sizing: border-box;
+  font-size: 12px;
+  color: aliceblue;
+  font-weight: 600;
+  box-sizing: border-box;
+  padding-top: 7px;
 }
 .Range {
   /* border: 3px solid white; */
@@ -451,29 +476,30 @@ input[type="search"] {
 }
 input[type="range"] {
   border: 2px solid white;
-  width: 100%;
+  width: 86%;
   height: 2px;
   cursor: pointer;
   accent-color: #ff0c55;
 }
 .Artists {
-  height: 230px;
+  height: 192px;
   width: 55em;
   margin: auto;
   display: flex;
   /* margin-top: -68px; */
   margin-bottom: 90px;
   position: relative;
-  top: -65px;
-  left: -16em;
+  top: -166px;
+  left: -20em;
   box-sizing: border-box;
   padding-top: 34px;
+  /* border: 2px solid white; */
 }
 
 .Artist_1 {
-  width: 132px;
+  width: 118px;
   border-radius: 70px;
-  height: 132px;
+  height: 118px;
   position: relative;
   left: 5em;
 }
@@ -483,9 +509,9 @@ input[type="range"] {
 }
 
 .Artist_2 {
-  width: 132px;
+  width: 118px;
   border-radius: 70px;
-  height: 132px;
+  height: 118px;
   position: relative;
   left: 10em;
 }
@@ -495,9 +521,9 @@ input[type="range"] {
   transition: 0.3s;
 }
 .Artist_3 {
-  width: 132px;
+  width: 118px;
   border-radius: 70px;
-  height: 132px;
+  height: 118px;
   position: relative;
   left: 15em;
 }
@@ -507,9 +533,9 @@ input[type="range"] {
   transition: 0.3s;
 }
 .Artist_4 {
-  width: 132px;
+  width: 118px;
   border-radius: 70px;
-  height: 132px;
+  height: 118px;
   position: relative;
   left: 20em;
 }
@@ -528,7 +554,7 @@ input[type="range"] {
   position: relative;
   left: -21em;
   font-style: oblique;
-  top: -104px;
+  top: -200px;
 }
 #name1 {
   /* border: 2px solid white; */
@@ -578,4 +604,32 @@ input[type="range"] {
 }
 .Artists a {
   text-decoration: none;
+}
+#range_2 {
+  border: 2px solid white;
+  height: 1px;
+  width: 155px;
+  margin-left: 21px;
+}
+.Timings {
+  /* border: 2px solid white; */
+  height: 28px;
+  width: 140px;
+  position: absolute;
+  top: 27px;
+  left: 25em;
+}
+#initials_Timings {
+  color: white;
+  /* display: none; */
+  position: relative;
+  top: -23px;
+  left: -414px;
+}
+#song_Timings {
+  color: white;
+  padding-left: 12px;
+  position: relative;
+  top: -46px;
+  left: 47em;
 }

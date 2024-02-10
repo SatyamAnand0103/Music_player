@@ -1,6 +1,6 @@
 let musicList = [
   {
-    id: "01",
+    id: "1",
     audioPath: require("./audios/Tera Hi.mp3"),
     name: "Tera Hi Bas Hona Chaahoon",
     artist: "JoJo",
@@ -10,7 +10,7 @@ let musicList = [
     //pauseImgPath: require("./images/pause_2.png"),
   },
   {
-    id: "02",
+    id: "2",
     audioPath: require("./audios/Sun raha hai na tu.mp3"),
     name: "Sun Raha Hai Na",
     artist: "Ankit Tiwari",
@@ -20,7 +20,7 @@ let musicList = [
     //pauseImgPath: require("./images/pause_2.png"),
   },
   {
-    id: "03",
+    id: "3",
     audioPath: require("./audios/Hmk.mp3"),
     name: "Hamari Adhuri Kahani",
     artist: "Arijit Singh",
@@ -30,7 +30,7 @@ let musicList = [
     //pauseImgPath: require("./images/pause_2.png"),
   },
   {
-    id: "04",
+    id: "4",
     audioPath: require("./audios/Jab Bhi Teri.mp3"),
     name: "Jab Bhi Teri Yaad",
     artist: "Ishoj",
@@ -40,7 +40,7 @@ let musicList = [
     //pauseImgPath: require("./images/pause_2.png"),
   },
   {
-    id: "05",
+    id: "5",
     audioPath: require("./audios/Mohabbat.mp3"),
     name: "Mohabbat Ho Na Jaye",
     artist: "Kumar Sanu,Alka Yagini",
@@ -50,7 +50,7 @@ let musicList = [
     //pauseImgPath: require("./images/pause_2.png"),
   },
   {
-    id: "06",
+    id: "6",
     audioPath: require("./audios/Kham.mp3"),
     name: "Khamoshiyaan",
     artist: "Arijit Singh",
@@ -60,7 +60,7 @@ let musicList = [
     //pauseImgPath: require("./images/pause_2.png"),
   },
   {
-    id: "07",
+    id: "7",
     audioPath: require("./audios/Hum.mp3"),
     name: "Humnava",
     artist: "Papon",
@@ -70,7 +70,7 @@ let musicList = [
     //pauseImgPath: require("./images/pause_2.png"),
   },
   {
-    id: "08",
+    id: "8",
     audioPath: require("./audios/Naina.mp3"),
     name: "Naina",
     artist: "Arijit Singh",
@@ -80,7 +80,7 @@ let musicList = [
     //pauseImgPath: require("./images/pause_2.png"),
   },
   {
-    id: "09",
+    id: "9",
     audioPath: require("./audios/MainDhoondne.mp3"),
     name: "Mai Dhoondne Ko Zamane Me",
     artist: "Arijit Singh",

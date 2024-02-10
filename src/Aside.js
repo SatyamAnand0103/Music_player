@@ -1,138 +1,244 @@
 import React from "react";
-import { musicList_1, musicList_2 } from "./File";
-// import { OneBackward, Oneforward } from "./MasterPlay";
+import { useState } from "react";
+import { musicList } from "./MasterPlay";
 let a = document.getElementsByClassName("PlayIcon");
-let b = document.getElementsByClassName("myAudios_1");
-let d = document.getElementsByClassName("myAudios_2");
+let b = document.getElementsByClassName("myAudios");
 let e = document.getElementsByClassName("fadeImg");
 let f = document.getElementsByClassName("displaySongBox");
 let g = document.getElementsByClassName("SongDetails");
 
 function Aside() {
-  //Vertical songs list play and pause...
-  let masterPlaybtn = () => {};
-  const abc = (i) => {
-    // console.log(i + 1 + " song is selected");
-    for (let j = 0; j < musicList_1.length; j++) {
-      if (i == j) {
-        a[i].src = require("./images/pause_2.png");
-        b[i].load();
-        b[i].play();
+  let [idx_1, setIdx_1] = useState(0);
+  let [index, setIndex] = useState(0);
+  let [initials_Timings, setInitials_Timings] = useState(0);
 
-        document.getElementById(
-          "masterPlay"
-        ).src = require("./images/pausebtn.png");
-      } else {
-        a[j].src = require("./images/play.png");
-        b[j].pause();
-      }
+  let [isPlaying, setIsPlaying] = useState(false);
+  let inds = 0;
+
+  const selectAndPlay = (i) => {
+    setIdx_1(i);
+    console.log(i);
+
+    const audio = new Audio(b[i].audioPath);
+    audio.play();
+    console.log(audio.currentTime + " sssss");
+
+    console.log(b[i] + "  song");
+    ///// To find the timings of songs/////
+    let running_Time = b[i].duration;
+    document.getElementById("song_Timings").innerHTML = (
+      running_Time / 60
+    ).toFixed(2);
+
+    // let current_timing = b[i].currentTime.toFixed(2);
+    // console.log(current_timing + " current Timing");
+    // console.log(setInitials_Timings(audio.currentTime));
+    // console.log((initials_Timings = { setInitials_Timings }));
+
+    //   audio.src = songURL;
+    //   audio.play();
+    // }
+
+    // function seek(value) {
+    //   audio.currentTime = value;
+    // }
+
+    for (let k = 0; k < musicList.length; k++) {
+      b[k].pause();
     }
-    for (let m = 0; m < musicList_2.length; m++) {
-      e[m].src = require("./images/icon.jpg");
-      d[m].pause();
-    }
+    document.getElementsByClassName("songsItem")[i].style.backgroundColor =
+      "#202230";
     f[0].style.display = "block";
-    document.getElementById("vibration").style.display = "block";
-    document.getElementById("vibration").src = require("./images/ab.gif");
-
-    f[0].src = musicList_1[i].imgPath;
+    f[0].src = musicList[i].imgPath;
     g[0].innerHTML =
-      musicList_1[i].name +
+      musicList[i].name +
       "<br>" +
-      musicList_1[i].artist +
+      musicList[i].artist +
       " , " +
       " " +
-      musicList_1[i].movie;
+      musicList[i].movie;
+    console.log(i + " song is selected");
+    document.getElementById("vibration").style.display = "block";
+    document.getElementById("vibration").src = require("./images/ab.gif");
+    b[i].play();
+    console.log(b[i].currentTime + " song is playing ____");
+    document.getElementById(
+      "masterPlay"
+    ).src = require("./images/pausebtn.png");
+    inds = i;
+    console.log(i + " for abc ");
   };
+
   /////////////////////////////////////////////////////////
 
   // mouseIn Event On Horizontal music list...
-  let onIn = (j) => {
-    console.log(j + 12 + "hover on ");
-    e[j].style.display = "block";
+  let onIn = (i) => {
+    // console.log(i + 13 + "hover on ");
+    e[i].style.display = "block";
   };
   // mouseOut Event On Horizontal music list...
 
-  let onOut = (j) => {
-    e[j].style.display = "none";
-    //e[j].style.transition = " ease-out 1s";
-
-    console.log(j + 12 + " " + "Left from");
+  let onOut = (i) => {
+    e[i].style.display = "none";
+    // console.log(i + 13 + " " + "Left from");
   };
   ////////////////////////////////////////////////////////////
 
   // Horizontal song play and pause...
-  const abcd = (j) => {
-    console.log(j + 12 + " " + " song is selected");
+  const abcd = (i) => {
+    setIdx_1(i);
+    console.log(i);
 
-    for (let k = 0; k < musicList_2.length; k++) {
-      if (j == k) {
-        e[j].src = require("./images/icon2.png");
-        d[j].play();
-      } else {
-        e[k].src = require("./images/icon.jpg");
-        d[k].pause();
+    ///// To find the timings of songs/////
+    let running_Time = b[i].duration;
+    document.getElementById("song_Timings").innerHTML = (
+      running_Time / 60
+    ).toFixed(2);
+
+    for (let k = 0; k < musicList.length; k++) {
+      b[k].pause();
+    }
+    document.getElementById(
+      "masterPlay"
+    ).src = require("./images/pausebtn.png");
+    for (let m = 0; m < 10; m++) {
+      if (i == 12) {
+        e[0].src = require("./images/icon2.png");
+        e[m].src = require("./images/icon.jpg");
+      } else if (i == 13) {
+        e[1].src = require("./images/icon2.png");
+        e[m].src = require("./images/icon.jpg");
+      } else if (i == 14) {
+        e[2].src = require("./images/icon2.png");
+        e[m].src = require("./images/icon.jpg");
+      } else if (i == 15) {
+        e[3].src = require("./images/icon2.png");
+        e[m].src = require("./images/icon.jpg");
+      } else if (i == 16) {
+        e[4].src = require("./images/icon2.png");
+        e[m].src = require("./images/icon.jpg");
+      } else if (i == 17) {
+        e[5].src = require("./images/icon2.png");
+        e[m].src = require("./images/icon.jpg");
+      } else if (i == 18) {
+        e[6].src = require("./images/icon2.png");
+        e[m].src = require("./images/icon.jpg");
+      } else if (i == 19) {
+        e[7].src = require("./images/icon2.png");
+        e[m].src = require("./images/icon.jpg");
+      } else if (i == 20) {
+        e[8].src = require("./images/icon2.png");
+        e[m].src = require("./images/icon.jpg");
       }
     }
-    for (let m = 0; m < musicList_1.length; m++) {
-      a[m].src = require("./images/play.png");
-      b[m].pause();
-    }
-
+    b[i].load();
+    b[i].play();
     f[0].style.display = "block";
     document.getElementById("vibration").style.display = "block";
     document.getElementById("vibration").src = require("./images/ab.gif");
-
-    f[0].src = musicList_2[j].imgPath;
+    f[0].src = musicList[i].imgPath;
     g[0].innerHTML =
-      musicList_2[j].name +
+      musicList[i].name +
       "<br>" +
-      musicList_2[j].artist +
+      musicList[i].artist +
       " , " +
       " " +
-      musicList_2[j].movie;
+      musicList[i].movie;
+    inds = i;
+  };
+  /////// for forward and backward/////////////////////
+  let OneForward = (inds) => {
+    // setIndex(inds + 1);
+    // console.log("for forward " + inds);
+  };
+  let OneBackward = (inds) => {
+    // setIndex(inds - 1);
+    // console.log("for backward " + inds);
+  };
+
+  //masterplay-----------------------------------------
+  let togglePlayPause = (inds) => {
+    console.log(b[inds].duration);
+    for (let k = 0; k < musicList.length; k++) {
+      if (inds == k) {
+        if (isPlaying == false) {
+          document.getElementById(
+            "masterPlay"
+          ).src = require("./images/pausebtn.png");
+          document.getElementById("vibration").src = require("./images/ab.gif");
+          document.getElementById(
+            "masterPlay"
+          ).src = require("./images/pausebtn.png");
+          b[k].play();
+          setIsPlaying(true);
+        } else {
+          document.getElementById(
+            "masterPlay"
+          ).src = require("./images/playbtn.png");
+          document.getElementById("vibration").style.display = "block";
+          document.getElementById("vibration").src = require("./images/bb.jpg");
+          document.getElementById(
+            "masterPlay"
+          ).src = require("./images/playbtn.png");
+          b[k].pause();
+          setIsPlaying(false);
+        }
+        console.log(inds + " song is playing. Got it !");
+      }
+    }
   };
 
   //vertical song in a playlist//
-
-  const listItems_1 = musicList_1.map((eachSong, index) => (
-    <div key={index} className="songsItem" onClick={() => abc(index)}>
-      <span> {eachSong.id}</span>
-      <div>
-        <img src={eachSong.imgPath}></img>
+  const listItems_1 = musicList
+    .filter(function (eachSong) {
+      return eachSong.id < 13;
+    })
+    .map((eachSong, index) => (
+      <div
+        key={index}
+        className="songsItem"
+        onClick={() => selectAndPlay(index)}
+      >
+        <span> {eachSong.id}</span>
+        <div>
+          <img src={eachSong.imgPath}></img>
+        </div>
+        <div className="SongNameBox">
+          <h5>{eachSong.name}</h5>
+          <br />
+          <h6> {eachSong.artist}</h6>
+        </div>
+        <div>
+          {/* <img src={eachSong.playImgPath} className="PlayIcon"></img> */}
+          <audio className="myAudios" src={eachSong.audioPath}></audio>;
+        </div>
       </div>
-      <div className="SongNameBox">
-        <h5>{eachSong.name}</h5>
-        <br />
-        <h6> {eachSong.artist}</h6>
-      </div>
-      <div>
-        <img src={eachSong.playImgPath} className="PlayIcon"></img>
-        <audio className="myAudios_1" src={eachSong.audioPath}></audio>;
-      </div>
-    </div>
-  ));
+    ));
 
   // for hiorizontal song playing//
 
-  let listItems_2 = musicList_2.map((eachSong, index) => (
-    <div
-      key={index}
-      className="SongsitemInLine"
-      onClick={() => abcd(index)}
-      onMouseEnter={() => onIn(index)}
-      onMouseLeave={() => onOut(index)}
-    >
-      <img src={eachSong.imgPath} className="songs_img"></img>
-      <h5>{eachSong.name} </h5>
-      <h6>{eachSong.artist}</h6>
+  let listItems_2 = musicList
+    .filter(function (eachSong) {
+      return eachSong.id >= 13;
+    })
+    .map((eachSong, index) => (
+      <div
+        key={index}
+        className="SongsitemInLine"
+        onClick={() => abcd(index + 12)}
+        onMouseEnter={() => onIn(index)}
+        onMouseLeave={() => onOut(index)}
+      >
+        <img src={eachSong.imgPath} className="songs_img"></img>
+        <h5>{eachSong.name} </h5>
+        <h6>{eachSong.artist}</h6>
 
-      <div className="OnFading">
-        <img src={require("./images/icon.jpg")} className="fadeImg"></img>
-        <audio className="myAudios_2" src={eachSong.audioPath}></audio>;
+        <div className="OnFading">
+          <img src={require("./images/icon.jpg")} className="fadeImg"></img>
+          <audio className="myAudios" src={eachSong.audioPath}></audio>;
+        </div>
       </div>
-    </div>
-  ));
+    ));
 
   return (
     <>
@@ -185,29 +291,49 @@ function Aside() {
       <div className="bottomBox">
         <div className="AllIconsOfSongs">
           <img
-            src={require("./images/backward.png")}
+            src={require("./images/backwardd.jpeg")}
             id="backwardicon"
-            // onClick={() => OneBackward(index)}
+            onClick={() => OneBackward(index)}
           ></img>
           <img
             src={require("./images/playbtn.png")}
             className="PlayPauseicon"
             id="masterPlay"
-            onClick={() => masterPlaybtn()}
+            onClick={() => togglePlayPause(idx_1)}
           ></img>
           <img
-            src={require("./images/forward.png")}
+            src={require("./images/forwardd.jpeg")}
             id="forwardicon"
-            // onClick={() => Oneforward(index)}
+            onClick={() => OneForward(index)}
           ></img>
         </div>
 
         <div className="displaySongPoster">
-          <img className="displaySongBox"></img>
-          <div></div>
-          <img id="vibration"></img>
+          <img
+            className="displaySongBox"
+            src={require("./images/haunted.webp")}
+          ></img>
+          <img src={require("./images/bb.jpg")} id="vibration"></img>
         </div>
-        <div className="SongDetails"></div>
+        <div className="SongDetails">
+          Tera Hi Bus Hona Chaahoon
+          <br></br>
+          JoJo , Haunted
+        </div>
+        <div id="musicIcon">
+          <img src={require("./images/music icon.png")}></img>
+        </div>
+        <div id="soundIcon">
+          <img src={require("./images/soundIcon.png")}></img>
+          <input
+            type="range"
+            min="0"
+            max="200"
+            value="100"
+            steps="1"
+            id="range_2"
+          ></input>
+        </div>
         <div className="Range" value="0">
           <input
             type="range"
@@ -217,6 +343,10 @@ function Aside() {
             step="10"
             id="ProgressBar"
           ></input>
+          <div className="Timings">
+            <div id="initials_Timings">00.00</div>
+            <div id="song_Timings">05.65</div>
+          </div>
         </div>
       </div>
     </>
