@@ -1,6 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { musicList } from "./MasterPlay";
+import { useEffect } from "react";
+import { useRef } from "react";
+
 let a = document.getElementsByClassName("PlayIcon");
 let b = document.getElementsByClassName("myAudios");
 let e = document.getElementsByClassName("fadeImg");
@@ -13,36 +16,18 @@ function Aside() {
   let [initials_Timings, setInitials_Timings] = useState(0);
 
   let [isPlaying, setIsPlaying] = useState(false);
-  let inds = 0;
 
+  let inds = 0;
+  // verticall songs on left //--------------------------------
   const selectAndPlay = (i) => {
     setIdx_1(i);
-    console.log(i);
+    console.log(i + 1 + " song is selected and is playing");
 
-    const audio = new Audio(b[i].audioPath);
-    audio.play();
-    console.log(audio.currentTime + " sssss");
-
-    console.log(b[i] + "  song");
     ///// To find the timings of songs/////
     let running_Time = b[i].duration;
     document.getElementById("song_Timings").innerHTML = (
       running_Time / 60
     ).toFixed(2);
-
-    // let current_timing = b[i].currentTime.toFixed(2);
-    // console.log(current_timing + " current Timing");
-    // console.log(setInitials_Timings(audio.currentTime));
-    // console.log((initials_Timings = { setInitials_Timings }));
-
-    //   audio.src = songURL;
-    //   audio.play();
-    // }
-
-    // function seek(value) {
-    //   audio.currentTime = value;
-    // }
-
     for (let k = 0; k < musicList.length; k++) {
       b[k].pause();
     }
@@ -57,16 +42,13 @@ function Aside() {
       " , " +
       " " +
       musicList[i].movie;
-    console.log(i + " song is selected");
     document.getElementById("vibration").style.display = "block";
     document.getElementById("vibration").src = require("./images/ab.gif");
     b[i].play();
-    console.log(b[i].currentTime + " song is playing ____");
     document.getElementById(
       "masterPlay"
     ).src = require("./images/pausebtn.png");
     inds = i;
-    console.log(i + " for abc ");
   };
 
   /////////////////////////////////////////////////////////
@@ -87,7 +69,7 @@ function Aside() {
   // Horizontal song play and pause...
   const abcd = (i) => {
     setIdx_1(i);
-    console.log(i);
+    console.log(i + 1 + " song is selected and is playing");
 
     ///// To find the timings of songs/////
     let running_Time = b[i].duration;
@@ -158,7 +140,8 @@ function Aside() {
 
   //masterplay-----------------------------------------
   let togglePlayPause = (inds) => {
-    console.log(b[inds].duration);
+    //console.log(b[inds].duration);
+
     for (let k = 0; k < musicList.length; k++) {
       if (inds == k) {
         if (isPlaying == false) {
@@ -183,7 +166,7 @@ function Aside() {
           b[k].pause();
           setIsPlaying(false);
         }
-        console.log(inds + " song is playing. Got it !");
+        console.log(inds + 1 + " song is playing. Got it in Masterplay!");
       }
     }
   };
