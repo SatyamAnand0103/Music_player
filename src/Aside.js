@@ -295,6 +295,17 @@ function Aside() {
     setIsPlaying(true);
     b[inds].ontimeupdate = () => {
       setCurrentTime(b[inds].currentTime);
+      //When no song is selected an default song has player:-
+
+      if (b[inds].currentTime.toFixed(2) == b[inds].duration.toFixed(2)) {
+        b[inds].pause();
+        document.getElementById(
+          "masterPlay"
+        ).src = require("./images/playbtn.png");
+        document.getElementById("vibration").src = require("./images/bb.jpg");
+        a[inds].src = require("./images/mainplay.png");
+      }
+
       const percentagePlayed = (b[inds].currentTime / b[inds].duration) * 100;
       // Update the progress bar value
       document.getElementById("ProgressBar").value = percentagePlayed;

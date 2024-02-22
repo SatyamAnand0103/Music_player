@@ -37,25 +37,14 @@ function Header() {
             "Song is present in Wedding Songs on " +
             weddingList[i].id +
             " position";
-          // b[i].play();
-          // setCurrentPlayList(weddingList);
           break;
         } else if (emotionalList[i].name.toLowerCase().includes(value)) {
           document.getElementById("detailsBox").innerHTML =
             "Song is present in Emotional Songs on " +
             emotionalList[i].id +
             " position";
-          // b[i].play();
-          // setCurrentPlayList(emotionalList);
           break;
-        }
-
-        // console.log("song found");
-        // document.getElementsByClassName("songsItem")[i].style.backgroundColor =
-        // "#202230";
-        // b[i].play();
-        // break;
-        else if (
+        } else if (
           !musicList[i].name.toLowerCase().includes(value) ||
           !weddingList[i].name.toLowerCase().includes(value) ||
           !emotionalList[i].name.toLowerCase().includes(value)
@@ -71,7 +60,7 @@ function Header() {
       <div className="containerBox">
         <div className="MusicIcon">
           <img src={require("./images/WynkMusicIcon.png")}></img>
-          <p>Wynk Music</p>
+          <p>Tor Toise Music</p>
         </div>
         <input
           type="search"
