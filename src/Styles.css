@@ -4,15 +4,19 @@ body {
   background-color: #0b0f12;
 }
 .containerBox {
-  border: 2px solid black;
+  z-index: 1;
+  /* border: 2px solid white; */
   height: 78px;
   background-color: #161616;
-  max-width: 1920px;
+  position: fixed;
+  /* display: block; */
+  width: 100%;
+  margin-top: -100px;
 }
 
 input[type="search"] {
   width: 28em;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   height: 44px;
   border-radius: 7px;
   padding: 2px 0px 0px 26px;
@@ -22,14 +26,32 @@ input[type="search"] {
   display: block;
   margin: auto;
 }
-.searchBox img {
+.searchBox {
+  border: 2px solid white;
   position: relative;
-  height: 34px;
+  height: 30px;
   top: -98px;
   left: 11em;
   cursor: pointer;
   display: block;
   margin: auto;
+}
+#detailsBox {
+  /* border: 2px solid white; */
+  height: 50px;
+  width: 24em;
+  margin: auto;
+  position: relative;
+  top: -82px;
+  z-index: 1;
+  color: white;
+  box-sizing: border-box;
+  padding-top: 11px;
+  padding-left: 15px;
+  left: 7px;
+  background-color: #202230;
+  border-radius: 10px;
+  display: none;
 }
 
 .MusicIcon img {
@@ -58,6 +80,8 @@ input[type="search"] {
   width: 70em;
   margin: auto;
   background-color: #0b0f12;
+  /* border: 2px solid white; */
+  margin-top: 100px;
 }
 .Listofitems a {
   color: white;
@@ -77,6 +101,8 @@ input[type="search"] {
   width: 112em;
   margin: auto;
   background-color: #0b0f12;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
 }
 .carousel img {
   height: 250px;
@@ -97,9 +123,11 @@ input[type="search"] {
   margin-top: 60px;
 }
 .OnlyMusicList {
+  /* border-left: 2px solid white; */
   height: 59em;
   width: 29em;
   display: inline-block;
+  /* border-top: 2px solid white; */
 }
 .PlaylistHeading {
   height: 56px;
@@ -189,7 +217,7 @@ input[type="search"] {
 
 .MusicStuffs {
   /* border: 2px solid white; */
-  height: 103%;
+  height: 95%;
   position: relative;
   width: 75em;
   float: right;
@@ -232,7 +260,7 @@ input[type="search"] {
 .SongQuote {
   /* border: 2px solid white; */
   margin-left: 23px;
-  margin-top: 33px;
+  margin-top: 9px;
   color: white;
   padding: 14px;
   font-style: italic;
@@ -262,6 +290,32 @@ input[type="search"] {
   background-color: black;
   transition: 0.7s;
 }
+.dropBox {
+  /* border: 2px solid white; */
+  height: 102px;
+  width: 210px;
+  position: absolute;
+  top: 18em;
+  left: 195px;
+  background-color: #202230;
+  border-radius: 12px;
+  display: none;
+}
+.dropBox h6 {
+  /* border: 2px solid white; */
+  color: white;
+  box-sizing: border-box;
+  padding-top: 8px;
+  box-sizing: border-box;
+  /* font-style: italic; */
+}
+#btn1:hover .dropBox {
+  display: block;
+}
+.dropBox h6:hover {
+  cursor: pointer;
+  color: #ff0c55;
+}
 #btn2 {
   color: rgba(217, 31, 38, 255);
   background-color: white;
@@ -280,7 +334,7 @@ input[type="search"] {
   display: flex;
   /* border: 2px solid white; */
   overflow-x: auto;
-  height: 15em;
+  height: 17em;
   overflow-y: hidden;
   padding-top: 12px;
 }
@@ -294,21 +348,21 @@ input[type="search"] {
   box-sizing: border-box;
   background-size: 300px 100px;
   margin-top: 6px;
-  height: 217px;
+  height: 235px;
   margin-left: 22px;
+  /* border: 2px solid white; */
 }
 .SongsitemInLine:hover {
   border-bottom: 1px solid white;
 }
 
 .fadeImg {
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
   position: relative;
   top: 22px;
   left: 11px;
   display: none;
-  border-radius: 20px;
 }
 
 .songs_img {
@@ -361,29 +415,46 @@ input[type="search"] {
 }
 .bottomBox {
   height: 5em;
-  background-color: rgba(33, 37, 45, var(--tw-bg-opacity));
-  width: 80em;
+  width: 100%;
+  margin: auto;
+  position: fixed;
+  bottom: 0em;
+  /* border: 2px solid white; */
+  z-index: 1;
+  background-color: #272c2f;
+
+  /* background-color: #272c2f; */
+}
+.bottomBox:hover {
+  cursor: pointer;
+}
+.AllIconsOfSongs {
+  /* border: 2px solid white; */
+  height: 6em;
+  /* background-color: #21252e; */
+  width: 200px;
+  height: 79px;
   margin: auto;
   margin-top: 0px;
-  border-bottom: 1px solid white;
-  position: relative;
-  bottom: -18em;
+  text-align: center;
 }
 .PlayPauseicon {
+  /* position: relative; */
   height: 3em;
   margin-top: 16px;
+  /* left: 627px; */
 }
 #backwardicon {
   height: 3em;
   margin-top: 16px;
   position: relative;
-  left: -26px;
+  left: -22px;
 }
 #forwardicon {
   height: 3em;
   margin-top: 16px;
   position: relative;
-  right: -20px;
+  left: 22px;
 }
 
 #musicIcon img {
@@ -393,7 +464,7 @@ input[type="search"] {
   width: 40px;
   top: 45px;
   top: 20px;
-  left: 400px;
+  left: 36em;
 }
 
 #soundIcon {
@@ -401,8 +472,8 @@ input[type="search"] {
   height: 34px;
   width: 235px;
   position: absolute;
-  left: 56em;
   top: 25px;
+  right: 100px;
 }
 #soundIcon img {
   /* border: 2px solid white; */
@@ -412,23 +483,14 @@ input[type="search"] {
   top: 26px;
   left: 62em;
 }
-.AllIconsOfSongs {
-  display: flex;
-  height: 6em;
-  justify-content: center;
-  /* background-color: #21252e; */
-  position: relative;
-  left: 35em;
-  width: -4px;
-}
+
 .displaySongPoster {
-  /* border: 2px solid white; */
   /* border: 2px solid white; */
   height: 51px;
   width: 55px;
   position: relative;
-  top: -80px;
-  left: 166px;
+  top: -64px;
+  left: 13em;
 }
 
 .displaySongBox {
@@ -436,6 +498,8 @@ input[type="search"] {
   width: 52px;
   border-radius: 6px;
   border: 0px;
+  /* display: none; */
+
   /* display: none; */
 }
 
@@ -451,49 +515,48 @@ input[type="search"] {
 }
 .SongDetails {
   /* border: 2px solid white; */
-  height: 58px;
-  width: 200px;
+  /* border: 2px solid white; */
+  height: 45px;
+  width: 296px;
   position: relative;
-  left: 234px;
-  top: -125px;
-  /* margin: auto; */
-  /* text-align: center; */
+  left: 275px;
+  top: -137px;
   box-sizing: border-box;
   font-size: 12px;
   color: aliceblue;
   font-weight: 600;
   box-sizing: border-box;
-  padding-top: 7px;
+  padding-top: 6px;
+  margin-top: 28px;
 }
 .Range {
-  /* border: 3px solid white; */
   height: 40px;
-  width: 100%;
   margin: auto;
   text-align: center;
   position: relative;
-  top: -228px;
+  top: -221px;
+  cursor: pointer;
+  /* border: 2px solid white; */
 }
 input[type="range"] {
-  border: 2px solid white;
-  width: 86%;
-  height: 2px;
+  /* border: 2px solid white; */
+  width: 100%;
+  height: 3px;
   cursor: pointer;
   accent-color: #ff0c55;
 }
 .Artists {
-  height: 192px;
+  /* border: 2px solid white; */
   width: 55em;
   margin: auto;
+  height: 192px;
   display: flex;
-  /* margin-top: -68px; */
-  margin-bottom: 90px;
-  position: relative;
-  top: -166px;
-  left: -20em;
+  margin-top: -68px;
   box-sizing: border-box;
-  padding-top: 34px;
-  /* border: 2px solid white; */
+  padding-top: 20px;
+  position: relative;
+  left: -11em;
+  margin-bottom: 150px;
 }
 
 .Artist_1 {
@@ -545,16 +608,17 @@ input[type="range"] {
   transition: 0.3s;
 }
 .Names {
-  border-image: linear-gradient(45deg, rgb(0, 143, 104), rgb(250, 224, 66)) 1;
-  width: 11em;
+  /* border-image: linear-gradient(45deg, rgb(0, 143, 104), rgb(250, 224, 66)) 1; */
+  width: 7em;
   font-size: 28px;
   color: white;
   text-align: center;
   margin: auto;
   position: relative;
-  left: -21em;
+  left: -17em;
   font-style: oblique;
-  top: -200px;
+  top: -88px;
+  /* border: 2px solid white; */
 }
 #name1 {
   /* border: 2px solid white; */
@@ -597,7 +661,6 @@ input[type="range"] {
   text-decoration: none;
 }
 
-/*  */
 .button img {
   height: 40px;
   width: 40px;
@@ -606,13 +669,13 @@ input[type="range"] {
   text-decoration: none;
 }
 #range_2 {
-  border: 2px solid white;
-  height: 1px;
+  /* border: 2px solid white; */
+  height: 3px;
   width: 155px;
   margin-left: 21px;
 }
 .Timings {
-  /* border: 2px solid white; */
+  border: 2px solid white;
   height: 28px;
   width: 140px;
   position: absolute;
@@ -621,15 +684,27 @@ input[type="range"] {
 }
 #initials_Timings {
   color: white;
-  /* display: none; */
   position: relative;
-  top: -23px;
-  left: -414px;
+  top: 8px;
+  /* border: 2px solid white; */
+  width: 60px;
+  left: 1em;
 }
 #song_Timings {
   color: white;
-  padding-left: 12px;
   position: relative;
-  top: -46px;
-  left: 47em;
+  top: -16px;
+  /* border: 2px solid white; */
+  width: 60px;
+  right: 17px;
+  float: right;
+}
+
+.download img {
+  /* border: 2px solid white; */
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top: -218px;
+  left: 48em;
 }

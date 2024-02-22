@@ -1,6 +1,71 @@
 import React from "react";
+import { useState } from "react";
+import { musicList } from "./MasterPlay";
+import { emotionalList } from "./EmotionalList";
+import { weddingList } from "./WeddingList";
+let b = document.getElementsByClassName("myAudios");
 
 function Header() {
+  let [currentPlayList, setCurrentPlayList] = useState(musicList);
+
+  let [value, setValue] = useState("");
+  let textOnSearch = (e) => {
+    setValue(e.target.value);
+  };
+  console.log(value);
+  let Search_song = () => {
+    document.getElementById("detailsBox").style.display = "block";
+
+    setInterval(() => {
+      document.getElementById("detailsBox").style.display = "none";
+    }, 6000);
+    if (value == "") {
+      document.getElementById("detailsBox").innerHTML =
+        "Search Song in Search Bar !";
+    } else {
+      for (let i = 0; i < 21; i++) {
+        if (musicList[i].name.toLowerCase().includes(value)) {
+          document.getElementById("detailsBox").innerHTML =
+            "Song is present in My PlayList Songs on " +
+            musicList[i].id +
+            " position";
+
+          // setCurrentPlayList(musicList);
+          break;
+        } else if (weddingList[i].name.toLowerCase().includes(value)) {
+          document.getElementById("detailsBox").innerHTML =
+            "Song is present in Wedding Songs on " +
+            weddingList[i].id +
+            " position";
+          // b[i].play();
+          // setCurrentPlayList(weddingList);
+          break;
+        } else if (emotionalList[i].name.toLowerCase().includes(value)) {
+          document.getElementById("detailsBox").innerHTML =
+            "Song is present in Emotional Songs on " +
+            emotionalList[i].id +
+            " position";
+          // b[i].play();
+          // setCurrentPlayList(emotionalList);
+          break;
+        }
+
+        // console.log("song found");
+        // document.getElementsByClassName("songsItem")[i].style.backgroundColor =
+        // "#202230";
+        // b[i].play();
+        // break;
+        else if (
+          !musicList[i].name.toLowerCase().includes(value) ||
+          !weddingList[i].name.toLowerCase().includes(value) ||
+          !emotionalList[i].name.toLowerCase().includes(value)
+        ) {
+          document.getElementById("detailsBox").innerHTML =
+            "song does not found !";
+        }
+      }
+    }
+  };
   return (
     <>
       <div className="containerBox">
@@ -8,12 +73,20 @@ function Header() {
           <img src={require("./images/WynkMusicIcon.png")}></img>
           <p>Wynk Music</p>
         </div>
-
-        <div className="searchBox">
-          <input type="search" placeholder="Search for the Music..."></input>
-          <img src={require("./images/search.jpg")}></img>
-        </div>
+        <input
+          type="search"
+          placeholder="Search for the Music..."
+          value={value}
+          onChange={textOnSearch}
+        ></input>
+        <img
+          src={require("./images/search.jpg")}
+          onClick={Search_song}
+          className="searchBox"
+        ></img>
+        <div id="detailsBox"> </div>
       </div>
+
       <div className="Listofitems">
         <a href="https://wynk.in/music">
           <div>All</div>

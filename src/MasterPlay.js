@@ -6,8 +6,7 @@ let musicList = [
     artist: "JoJo",
     movie: "Haunted",
     imgPath: require("./images/haunted.webp"),
-    playImgPath: require("./images/play.png"),
-    //pauseImgPath: require("./images/pause_2.png"),
+    playImgPath: require("./images/mainplay.png"),
   },
   {
     id: "2",
@@ -16,8 +15,7 @@ let musicList = [
     artist: "Ankit Tiwari",
     movie: "Ashique 2",
     imgPath: require("./images/ashique2.webp"),
-    playImgPath: require("./images/play.png"),
-    //pauseImgPath: require("./images/pause_2.png"),
+    playImgPath: require("./images/mainplay.png"),
   },
   {
     id: "3",
@@ -26,8 +24,7 @@ let musicList = [
     artist: "Arijit Singh",
     movie: "Hamari Adhuri Kahani",
     imgPath: require("./images/hak.webp"),
-    playImgPath: require("./images/play.png"),
-    //pauseImgPath: require("./images/pause_2.png"),
+    playImgPath: require("./images/mainplay.png"),
   },
   {
     id: "4",
@@ -36,8 +33,7 @@ let musicList = [
     artist: "Ishoj",
     movie: "Album",
     imgPath: require("./images/jty.webp"),
-    playImgPath: require("./images/play.png"),
-    //pauseImgPath: require("./images/pause_2.png"),
+    playImgPath: require("./images/mainplay.png"),
   },
   {
     id: "5",
@@ -46,8 +42,7 @@ let musicList = [
     artist: "Kumar Sanu,Alka Yagini",
     movie: "Kasoor",
     imgPath: require("./images/kasoor.webp"),
-    playImgPath: require("./images/play.png"),
-    //pauseImgPath: require("./images/pause_2.png"),
+    playImgPath: require("./images/mainplay.png"),
   },
   {
     id: "6",
@@ -56,8 +51,7 @@ let musicList = [
     artist: "Arijit Singh",
     movie: "Khamoshiyaan",
     imgPath: require("./images/kham.webp"),
-    playImgPath: require("./images/play.png"),
-    //pauseImgPath: require("./images/pause_2.png"),
+    playImgPath: require("./images/mainplay.png"),
   },
   {
     id: "7",
@@ -66,8 +60,7 @@ let musicList = [
     artist: "Papon",
     movie: "Hamari Adhuri Kahani",
     imgPath: require("./images/hh.webp"),
-    playImgPath: require("./images/play.png"),
-    //pauseImgPath: require("./images/pause_2.png"),
+    playImgPath: require("./images/mainplay.png"),
   },
   {
     id: "8",
@@ -76,8 +69,7 @@ let musicList = [
     artist: "Arijit Singh",
     movie: "Dangal",
     imgPath: require("./images/naina.webp"),
-    playImgPath: require("./images/play.png"),
-    //pauseImgPath: require("./images/pause_2.png"),
+    playImgPath: require("./images/mainplay.png"),
   },
   {
     id: "9",
@@ -86,8 +78,7 @@ let musicList = [
     artist: "Arijit Singh",
     movie: "Heartless",
     imgPath: require("./images/heartless.webp"),
-    playImgPath: require("./images/play.png"),
-    //pauseImgPath: require("./images/pause_2.png"),
+    playImgPath: require("./images/mainplay.png"),
   },
   {
     id: "10",
@@ -96,8 +87,7 @@ let musicList = [
     artist: "Kishore Kumar",
     movie: "BlackMail",
     imgPath: require("./images/dil k paas.jpg"),
-    playImgPath: require("./images/play.png"),
-    //pauseImgPath: require("./images/pause_2.png"),
+    playImgPath: require("./images/mainplay.png"),
   },
   {
     id: "11",
@@ -106,8 +96,7 @@ let musicList = [
     artist: "Arijit Singh",
     movie: "Ashique 2",
     imgPath: require("./images/milne hai.jpg"),
-    playImgPath: require("./images/play.png"),
-    //pauseImgPath: require("./images/pause_2.png"),
+    playImgPath: require("./images/mainplay.png"),
   },
   {
     id: "12",
@@ -116,13 +105,12 @@ let musicList = [
     artist: "Manan Bhardwaj",
     movie: "Shiddat",
     imgPath: require("./images/shiddat.jpg"),
-    playImgPath: require("./images/play.png"),
-    //pauseImgPath: require("./images/pause_2.png"),
+    playImgPath: require("./images/mainplay.png"),
   },
   {
     id: "13",
     audioPath: require("./audios/SariDunia.mp3"),
-    name: "Sari Dunia ",
+    name: "Sari Dunia",
     artist: "B.Praak",
     movie: "Animal",
     imgPath: require("./images/sari dunia.webp"),
@@ -130,7 +118,7 @@ let musicList = [
   {
     id: "14",
     audioPath: require("./audios/HareKrishna.mp3"),
-    name: "Hare Krishna ",
+    name: "Hare Krishna",
     artist: "Palak Muchhal",
     movie: "Album",
     imgPath: require("./images/hk.webp"),
@@ -138,7 +126,7 @@ let musicList = [
   {
     id: "15",
     audioPath: require("./audios/OMahi.mp3"),
-    name: "O Mahi ",
+    name: "O Mahi",
     artist: "Arijit Singh",
     movie: "Dunki",
     imgPath: require("./images/Omahi.webp"),
