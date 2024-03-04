@@ -3,11 +3,8 @@ import { useState } from "react";
 import { musicList } from "./MasterPlay";
 import { emotionalList } from "./EmotionalList";
 import { weddingList } from "./WeddingList";
-let b = document.getElementsByClassName("myAudios");
 
 function Header() {
-  let [currentPlayList, setCurrentPlayList] = useState(musicList);
-
   let [value, setValue] = useState("");
   let textOnSearch = (e) => {
     setValue(e.target.value);
@@ -19,7 +16,7 @@ function Header() {
     setInterval(() => {
       document.getElementById("detailsBox").style.display = "none";
     }, 6000);
-    if (value == "") {
+    if (value === "") {
       document.getElementById("detailsBox").innerHTML =
         "Search Song in Search Bar !";
     } else {

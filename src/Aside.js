@@ -3,7 +3,6 @@ import { useState } from "react";
 import { musicList } from "./MasterPlay";
 import { weddingList } from "./WeddingList";
 import { emotionalList } from "./EmotionalList";
-import axios from "axios";
 
 let a = document.getElementsByClassName("PlayIcon");
 let b = document.getElementsByClassName("myAudios");
@@ -89,6 +88,13 @@ function Aside() {
 
     for (let k = 0; k < currentPlayList.length; k++) {
       b[k].pause();
+    }
+
+    for (let k = 0; k < 9; k++) {
+      if (i < 12)
+        document.getElementsByClassName("SongsitemInLine")[
+          k
+        ].style.borderBottom = "0px solid black";
     }
 
     for (let n = 0; n < 12; n++) {
@@ -190,9 +196,12 @@ function Aside() {
       document.getElementsByClassName("SongsitemInLine")[k].style.borderBottom =
         "0px solid black";
     }
-    if (i > 11) {
-      document.getElementsByClassName("songsItem")[11].style.backgroundColor =
-        "#0b0f12";
+
+    for (let k = 0; k < 12; k++) {
+      if (i > 11) {
+        document.getElementsByClassName("songsItem")[k].style.backgroundColor =
+          "#0b0f12";
+      }
     }
     document.getElementsByClassName("SongsitemInLine")[
       i - 12
@@ -382,22 +391,6 @@ function Aside() {
     document.getElementById("range_2").value = newVolume;
   };
 
-  // let downloadFile = (inds) => {
-  //   console.log(inds + " in download");
-  //   // axios({
-  //   //   url: "./audios/Pal Pal.mp3",
-  //   //   method: "GET",
-  //   //   responseType: "blob",
-  //   // }).then((response) => {
-  //   //   const url = window.URL.createObjectURL(new Blob([response.data]));
-  //   //   const link = document.createElement("a");
-  //   //   link.href = url;
-  //   //   link.setAttribute("download", "PalPal.mp3");
-  //   //   document.body.appendChild(link);
-  //   //   link.click();
-  //   // });
-  // };
-
   // Vertical song in a playlist:-
   const listItems_1 = currentPlayList
     .filter(function (eachSong) {
@@ -467,8 +460,8 @@ function Aside() {
 
         <div className="MusicStuffs">
           <p>Music_Studio</p>
-          <img src={require("./images/where.jpg")} id="AlanWalkerImg"></img>
-          <img src={require("./images/faded.jpg")} id="AlanWalkerImg2"></img>
+          <img src={require("./images/where.webp")} id="AlanWalkerImg"></img>
+          <img src={require("./images/faded.webp")} id="AlanWalkerImg2"></img>
 
           <img src={require("./images/faded2.jpg")} id="AlanWalkerImg3"></img>
 

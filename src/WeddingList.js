@@ -16,7 +16,6 @@ let weddingList = [
     movie: "Hum Saath Saath Hain",
     imgPath: require("./images/hum sath sath hai.jpg"),
     playImgPath: require("./images/mainplay.png"),
-   
   },
   {
     id: "3",
@@ -26,7 +25,6 @@ let weddingList = [
     movie: "Aarzoo",
     imgPath: require("./images/Sajan-Sajan.webp"),
     playImgPath: require("./images/mainplay.png"),
-   
   },
   {
     id: "4",
@@ -36,7 +34,6 @@ let weddingList = [
     movie: "Barsaat",
     imgPath: require("./images/Barsaat.jpg"),
     playImgPath: require("./images/mainplay.png"),
-   
   },
   {
     id: "5",
@@ -46,7 +43,6 @@ let weddingList = [
     movie: "Maine Pyar Kiya",
     imgPath: require("./images/MainePyarrKiya.webp"),
     playImgPath: require("./images/mainplay.png"),
-   
   },
   {
     id: "6",
@@ -56,7 +52,6 @@ let weddingList = [
     movie: "Haan Maine Bhi Pyaar Kiya",
     imgPath: require("./images/Mubarak_Ho.jpg"),
     playImgPath: require("./images/mainplay.png"),
-   
   },
   {
     id: "7",
@@ -66,7 +61,6 @@ let weddingList = [
     movie: "Maine Pyar Kiya",
     imgPath: require("./images/MainePyarrKiya.webp"),
     playImgPath: require("./images/mainplay.png"),
-   
   },
   {
     id: "8",
@@ -76,7 +70,6 @@ let weddingList = [
     movie: "Mere Yaar Ki Saadi Hai",
     imgPath: require("./images/Mere Yaar Ki Saadi Hai.webp"),
     playImgPath: require("./images/mainplay.png"),
-   
   },
   {
     id: "9",
@@ -86,7 +79,6 @@ let weddingList = [
     movie: "Mohabbatein",
     imgPath: require("./images/Mohabbatein.webp"),
     playImgPath: require("./images/mainplay.png"),
-   
   },
   {
     id: "10",
@@ -96,7 +88,6 @@ let weddingList = [
     movie: "Ek Rishtaa",
     imgPath: require("./images/Rishtaa.jpg"),
     playImgPath: require("./images/mainplay.png"),
-   
   },
   {
     id: "11",
@@ -106,7 +97,6 @@ let weddingList = [
     movie: "Dhadkan",
     imgPath: require("./images/Dhadkan.jpg"),
     playImgPath: require("./images/mainplay.png"),
-   
   },
   {
     id: "12",
@@ -116,7 +106,6 @@ let weddingList = [
     movie: "Dilwale Dulhania Le Jayenge",
     imgPath: require("./images/DDLJ.jpg"),
     playImgPath: require("./images/mainplay.png"),
-   
   },
   {
     id: "13",
