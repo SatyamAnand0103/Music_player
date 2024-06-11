@@ -15,43 +15,56 @@ body {
 }
 
 input[type="search"] {
-  width: 28em;
-  /* border: 1px solid white; */
-  height: 44px;
-  border-radius: 7px;
-  padding: 2px 0px 0px 26px;
-  font-size: 16px;
+  width: 30em;
+  border: 1px solid white;
+  height: 37px;
+  border-radius: 20px;
+  padding: 0px 0px 0px 40px;
+  font-size: 14px;
   position: relative;
-  top: -61px;
+  top: -55px;
   display: block;
   margin: auto;
 }
+
 .searchBox {
-  border: 2px solid white;
   position: relative;
-  height: 30px;
-  top: -98px;
-  left: 11em;
+  height: 37px;
+  top: -92px;
+  left: 179px;
   cursor: pointer;
   display: block;
   margin: auto;
+  width: 63px;
+  background-color: #9393935c;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
 }
+.searchBox img {
+  height: 25px;
+  position: absolute;
+  top: 6px;
+  left: 16px;
+}
+
 #detailsBox {
   /* border: 2px solid white; */
-  height: 50px;
+  height: 27px;
   width: 24em;
   margin: auto;
   position: relative;
-  top: -82px;
+  top: -87px;
   z-index: 1;
   color: white;
   box-sizing: border-box;
-  padding-top: 11px;
+  padding-top: 3px;
   padding-left: 15px;
-  left: 7px;
-  background-color: #202230;
-  border-radius: 10px;
+  left: -18px;
+  /* background-color: #202230; */
+  /* border-radius: 10px; */
   display: none;
+  background: -webkit-linear-gradient(top, #007bff, #1e90ff);
+  font-size: 12px;
 }
 
 .MusicIcon img {
@@ -70,18 +83,18 @@ input[type="search"] {
 }
 
 .Listofitems {
-  height: 64px;
+  height: 73px;
   display: flex;
   padding: 20px 31px 0px 60px;
   box-sizing: border-box;
   justify-content: space-evenly;
   background-color: black;
   color: aliceblue;
-  width: 70em;
-  margin: auto;
+  width: 60em;
   background-color: #0b0f12;
   /* border: 2px solid white; */
   margin-top: 100px;
+  margin-left: 133px;
 }
 .Listofitems a {
   color: white;
@@ -95,20 +108,19 @@ input[type="search"] {
 .SlideShowBox {
   display: flex;
   box-sizing: border-box;
-  height: 273px;
   overflow: hidden;
   background-color: black;
-  width: 112em;
+  width: 86em;
   margin: auto;
   background-color: #0b0f12;
-  border-left: 2px solid white;
-  border-right: 2px solid white;
+  /* border-left: 2px solid white; */
+  /* border-right: 2px solid white; */
 }
 .carousel img {
-  height: 250px;
+  height: 230px;
   width: 650px;
-  margin: 7px 0px 0px 23px;
   border-radius: 20px;
+  margin-left: 40px;
 }
 
 .carousel img:hover {
@@ -117,10 +129,11 @@ input[type="search"] {
 
 .MusicListBigBox {
   height: 60em;
-  width: 105em;
+  width: 95em;
   display: block;
   margin: auto;
   margin-top: 60px;
+  /* border: 2px solid white; */
 }
 .OnlyMusicList {
   /* border-left: 2px solid white; */
@@ -130,14 +143,11 @@ input[type="search"] {
   /* border-top: 2px solid white; */
 }
 .PlaylistHeading {
-  height: 56px;
-  width: 87%;
-  color: white;
-  font-size: 22px;
-  box-sizing: border-box;
-  padding: 9px;
-  margin: 11px;
-  font-style: italic;
+    color: white;
+    font-size: 20px;
+    box-sizing: border-box;
+    margin: 11px;
+    font-style: italic;
 }
 .PlaylistIcon {
   height: 53px;
@@ -217,15 +227,18 @@ input[type="search"] {
 
 .MusicStuffs {
   /* border: 2px solid white; */
-  height: 95%;
+  height: 88%;
   position: relative;
-  width: 75em;
+  width: 63em;
   float: right;
 }
 #AlanWalkerImg {
   float: right;
-  height: 34em;
+  height: 27em;
   border-radius: 14px;
+  margin-top: 70px;
+  position: relative;
+  right: 15px;
 }
 #AlanWalkerImg:hover {
   opacity: 0.8;
@@ -260,24 +273,29 @@ input[type="search"] {
 .SongQuote {
   /* border: 2px solid white; */
   margin-left: 23px;
-  margin-top: 9px;
+  /* margin-top: 9px; */
   color: white;
   padding: 14px;
   font-style: italic;
+  position: relative;
+  top: 19em;
+  width: 31em;
 }
 .Buttons_2 {
   /* border: 2px solid white; */
-  height: 120px;
-  box-sizing: border-box;
-  padding: -36px;
-  padding-left: 124px;
+  height: 92px;
+  width: 29em;
+  text-align: center;
+  position: relative;
+  top: 18em;
+  left: 49px;
 }
 .button {
   margin: 33px;
-  height: 42px;
-  width: 160px;
+  height: 36px;
+  width: 134px;
   border-radius: 24px;
-  font-size: 24px;
+  font-size: 19px;
   font-style: italic;
 }
 #btn1 {
@@ -292,27 +310,25 @@ input[type="search"] {
 }
 .dropBox {
   /* border: 2px solid white; */
-  height: 102px;
-  width: 210px;
+  /* height: 150px; */
+  width: 15em;
   position: absolute;
-  top: 18em;
-  left: 140px;
-  background-color: #202230;
-  border-radius: 12px;
-  display: none;
-}
-.dropBox h6 {
-  /* border: 2px solid white; */
+  top: 91px;
+  left: 52px;
   color: white;
-  box-sizing: border-box;
-  padding-top: 8px;
-  box-sizing: border-box;
-  /* font-style: italic; */
 }
-#btn1:hover .dropBox {
-  display: block;
+.dropBox div {
+  /* border: 2px solid white; */
+  /* display: inline-block; */
+  width: 157px;
+  box-sizing: border-box;
+  /* padding: 6px; */
+  margin-top: 22px;
+  color: grey;
+  font-weight: 600;
 }
-.dropBox h6:hover {
+
+.dropBox div:hover {
   cursor: pointer;
   color: #ff0c55;
 }
@@ -330,25 +346,25 @@ input[type="search"] {
 }
 
 .SongsinLine {
-  margin-top: 54px;
   display: flex;
   /* border: 2px solid white; */
   overflow-x: auto;
   height: 17em;
   overflow-y: hidden;
   padding-top: 12px;
+  position: relative;
+  top: 4em;
+  width: 63em;
 }
 ::-webkit-scrollbar {
   display: none;
 }
 .SongsitemInLine {
   /* border-image: linear-gradient(45deg, rgb(0, 143, 104), rgb(250, 224, 66)) 1; */
-  width: 150px;
+  width: 133px;
   flex: 0 0 auto;
-  box-sizing: border-box;
-  background-size: 300px 100px;
   margin-top: 6px;
-  height: 235px;
+  height: 224px;
   margin-left: 22px;
   /* border: 2px solid white; */
 }
@@ -366,17 +382,17 @@ input[type="search"] {
 }
 
 .songs_img {
-  height: 145px;
+  height: 134px;
 }
 .PopularSongs {
-  height: 16px;
   font-size: 23px;
   font-style: italic;
   color: white;
   margin-left: 84px;
-  width: 157px;
-  top: 0px;
-  /* position: relative; */
+  position: relative;
+  top: 14.5em;
+  width: 17em;
+  /* border: 2px solid white; */
 }
 
 .SongsitemInLine h5 {
@@ -384,15 +400,18 @@ input[type="search"] {
   text-align: center;
   color: white;
   background-color: rgb(37 40 59);
-  font-weight: 300;
-  width: 145px;
+  font-weight: 400;
+  width: 134px;
+  font-size: 16px;
+  box-sizing: border-box;
+  padding: 4px;
 }
 .SongsitemInLine h6 {
-  text-align: center;
   color: white;
   color: grey;
   font-weight: 300;
   font-style: italic;
+  text-align: center;
 }
 
 .OnFading {

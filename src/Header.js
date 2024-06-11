@@ -5,41 +5,51 @@ import { emotionalList } from "./EmotionalList";
 import { weddingList } from "./WeddingList";
 
 function Header() {
+  let [currentPlayList, setCurrentPlayList] = useState(musicList);
   let [value, setValue] = useState("");
   let textOnSearch = (e) => {
     setValue(e.target.value);
   };
   console.log(value);
+
   let Search_song = () => {
     document.getElementById("detailsBox").style.display = "block";
 
     setInterval(() => {
       document.getElementById("detailsBox").style.display = "none";
-    }, 6000);
+    }, 12000);
+
     if (value === "") {
       document.getElementById("detailsBox").innerHTML =
         "Search Song in Search Bar !";
     } else {
       for (let i = 0; i < 21; i++) {
-        if (musicList[i].name.toLowerCase().includes(value)) {
+        if (musicList[i].name.toLowerCase().includes(value.toLowerCase())) {
+          setCurrentPlayList(musicList);
           document.getElementById("detailsBox").innerHTML =
             "Song is present in My PlayList Songs on " +
-            musicList[i].id +
+            currentPlayList[i].id +
             " position";
 
-          // setCurrentPlayList(musicList);
           break;
-        } else if (weddingList[i].name.toLowerCase().includes(value)) {
+        } else if (
+          weddingList[i].name.toLowerCase().includes(value.toLowerCase())
+        ) {
+          setCurrentPlayList(weddingList);
           document.getElementById("detailsBox").innerHTML =
             "Song is present in Wedding Songs on " +
-            weddingList[i].id +
+            currentPlayList[i].id +
             " position";
           break;
-        } else if (emotionalList[i].name.toLowerCase().includes(value)) {
+        } else if (
+          emotionalList[i].name.toLowerCase().includes(value.toLowerCase())
+        ) {
+          setCurrentPlayList(emotionalList);
           document.getElementById("detailsBox").innerHTML =
             "Song is present in Emotional Songs on " +
-            emotionalList[i].id +
+            currentPlayList[i].id +
             " position";
+
           break;
         } else if (
           !musicList[i].name.toLowerCase().includes(value) ||
@@ -59,17 +69,16 @@ function Header() {
           <img src={require("./images/WynkMusicIcon.png")}></img>
           <p>Tor Toise Music</p>
         </div>
+
         <input
           type="search"
           placeholder="Search for the Music..."
           value={value}
           onChange={textOnSearch}
         ></input>
-        <img
-          src={require("./images/search.jpg")}
-          onClick={Search_song}
-          className="searchBox"
-        ></img>
+        <div className="searchBox" onClick={Search_song}>
+          <img src={require("./images/search.jpg")}></img>
+        </div>
         <div id="detailsBox"> </div>
       </div>
 

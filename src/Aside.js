@@ -123,6 +123,10 @@ function Aside() {
       " , " +
       " " +
       currentPlayList[i].movie;
+    document.getElementById("back_2").style.display = "block";
+    document.getElementById("back_2").style.backgroundImage =
+      "images/haunted.webp"; //currentPlayList[i].imgPath;
+
     a[i].src = require("./images/pausebutton.png");
     document.getElementById("vibration").style.display = "block";
     document.getElementById("vibration").src = require("./images/ab.gif");
@@ -445,9 +449,8 @@ function Aside() {
   return (
     <>
       <div className="MusicListBigBox">
+        <div id="back_2"></div>
         <div className="OnlyMusicList">
-          <div className="PlaylistHeading">Playlist</div>
-
           <div className="PlaylistIcon">
             <span>
               <img src={require("./images/music icon.png")}></img>
@@ -461,18 +464,30 @@ function Aside() {
         <div className="MusicStuffs">
           <p>Music_Studio</p>
           <img src={require("./images/where.webp")} id="AlanWalkerImg"></img>
-          <img src={require("./images/faded.webp")} id="AlanWalkerImg2"></img>
+          {/* <img src={require("./images/faded.webp")} id="AlanWalkerImg2"></img> */}
 
-          <img src={require("./images/faded2.jpg")} id="AlanWalkerImg3"></img>
+          {/* <img src={require("./images/faded2.jpg")} id="AlanWalkerImg3"></img> */}
+
+          <div className="dropBox">
+            <span className="PlaylistHeading">Playlist</span>
+
+            <div onClick={Playlist_1}>
+              {" "}
+              ○ &nbsp;<i>Wedding Songs</i>
+            </div>
+            <div onClick={Playlist_2}>
+              {" "}
+              ○ &nbsp; <i>Emotional Songs</i>
+            </div>
+            <div onClick={Playlist_3}>
+              {" "}
+              ○ &nbsp; <i>My Playlist Songs</i>
+            </div>
+          </div>
 
           <div className="Buttons_2">
             <button className="button" id="btn1">
               play
-              <div className="dropBox">
-                <h6 onClick={Playlist_1}> 1. Wedding Songs</h6>
-                <h6 onClick={Playlist_2}> 2. Emotional Songs</h6>
-                <h6 onClick={Playlist_3}> 3. My Playlist Songs</h6>
-              </div>
             </button>
             <button className="button" id="btn2">
               follow
@@ -533,12 +548,14 @@ function Aside() {
           <input
             type="range"
             min="0"
-            max="200"
-            value={volume * 200}
-            steps="1"
+            max="1"
+            value={1}
+            step="0.1"
             id="range_2"
             onClick={handleVolumeClick}
           ></input>
+
+          {/* <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1"></input> */}
         </div>
         <div className="Range">
           <input
@@ -552,13 +569,6 @@ function Aside() {
           <div id="initials_Timings">{formatTime(currentTime)}</div>
           <div id="song_Timings">{formatTime(totalTime)}</div>
         </div>
-        {/* <a href={"./audios/Milne hai.mp3"} download> */}{" "}
-        {/* <div className="download">
-          <img
-            src={require("./images/download.png")}
-            onClick={() => downloadFile(idx_1)}
-          ></img>
-        </div> */}
       </div>
     </>
   );
