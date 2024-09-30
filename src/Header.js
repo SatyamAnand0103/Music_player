@@ -1,12 +1,11 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { musicList } from "./MasterPlay";
 import { emotionalList } from "./EmotionalList";
 import { weddingList } from "./WeddingList";
 
-function Header() {
-  let [currentPlayList, setCurrentPlayList] = useState(musicList);
+function Header({ onPlaylistChange, inputValue }) {
   let [value, setValue] = useState("");
+
   let textOnSearch = (e) => {
     setValue(e.target.value);
   };
@@ -25,30 +24,36 @@ function Header() {
     } else {
       for (let i = 0; i < 21; i++) {
         if (musicList[i].name.toLowerCase().includes(value.toLowerCase())) {
-          setCurrentPlayList(musicList);
+          onPlaylistChange(musicList);
           document.getElementById("detailsBox").innerHTML =
             "Song is present in My PlayList Songs on " +
-            currentPlayList[i].id +
-            " position";
+            (i + 1) +
+            " " +
+            "Position";
+          // currentPlayList[i].id +
+          // " position";
 
           break;
         } else if (
           weddingList[i].name.toLowerCase().includes(value.toLowerCase())
         ) {
-          setCurrentPlayList(weddingList);
+          onPlaylistChange(weddingList);
           document.getElementById("detailsBox").innerHTML =
-            "Song is present in Wedding Songs on " +
-            currentPlayList[i].id +
-            " position";
+            "Song is present in Wedding Songs on " + (i + 1) + " " + "Position";
+          // currentPlayList[i].id +
+          // " position";
           break;
         } else if (
           emotionalList[i].name.toLowerCase().includes(value.toLowerCase())
         ) {
-          setCurrentPlayList(emotionalList);
+          onPlaylistChange(emotionalList);
           document.getElementById("detailsBox").innerHTML =
             "Song is present in Emotional Songs on " +
-            currentPlayList[i].id +
-            " position";
+            (i + 1) +
+            " " +
+            "Position";
+          // currentPlayList[i].id +
+          // " position";
 
           break;
         } else if (
@@ -80,9 +85,10 @@ function Header() {
           <img src={require("./images/search.jpg")}></img>
         </div>
         <div id="detailsBox"> </div>
+        <div id="PopUpShow">Welcome {inputValue.toUpperCase() + "👦"}</div>
       </div>
 
-      <div className="Listofitems">
+      {/* <div className="Listofitems">
         <a href="https://wynk.in/music">
           <div>All</div>
         </a>
@@ -103,7 +109,7 @@ function Header() {
           {" "}
           <div> Top Albums</div>
         </a>
-      </div>
+      </div> */}
     </>
   );
 }

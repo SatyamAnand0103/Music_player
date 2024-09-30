@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #0b0f12;
+  /* background-color: white; */
 }
 .containerBox {
   z-index: 1;
@@ -11,7 +12,7 @@ body {
   position: fixed;
   /* display: block; */
   width: 100%;
-  margin-top: -100px;
+  top: 0px;
 }
 
 input[type="search"] {
@@ -40,6 +41,22 @@ input[type="search"] {
   border-top-right-radius: 18px;
   border-bottom-right-radius: 18px;
 }
+
+/* Chrome, Safari, and Edge  To remove the cross thet apperas on the Search Bar*/
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+/* Firefox */
+input[type="search"] {
+  -moz-appearance: textfield; /* Removes the clear button in Firefox */
+}
+
+/* Internet Explorer and Edge (Legacy) */
+input[type="search"]::-ms-clear {
+  display: none; /* Hides the clear button */
+}
+
 .searchBox img {
   height: 25px;
   position: absolute;
@@ -67,6 +84,9 @@ input[type="search"] {
   font-size: 12px;
 }
 
+.MusicIcon {
+  z-index: 1;
+}
 .MusicIcon img {
   height: 52px;
   width: 52px;
@@ -113,8 +133,9 @@ input[type="search"] {
   width: 86em;
   margin: auto;
   background-color: #0b0f12;
-  /* border-left: 2px solid white; */
-  /* border-right: 2px solid white; */
+  /* border: 2px solid white; */
+  position: relative;
+  top: 110px;
 }
 .carousel img {
   height: 230px;
@@ -132,7 +153,7 @@ input[type="search"] {
   width: 95em;
   display: block;
   margin: auto;
-  margin-top: 60px;
+  margin-top: 180px;
   /* border: 2px solid white; */
 }
 .OnlyMusicList {
@@ -143,11 +164,11 @@ input[type="search"] {
   /* border-top: 2px solid white; */
 }
 .PlaylistHeading {
-    color: white;
-    font-size: 20px;
-    box-sizing: border-box;
-    margin: 11px;
-    font-style: italic;
+  color: white;
+  font-size: 20px;
+  box-sizing: border-box;
+  margin: 11px;
+  font-style: italic;
 }
 .PlaylistIcon {
   height: 53px;
@@ -233,16 +254,15 @@ input[type="search"] {
   float: right;
 }
 #AlanWalkerImg {
+  /* border: 2px solid white; */
+
   float: right;
-  height: 27em;
+  height: 32em;
   border-radius: 14px;
-  margin-top: 70px;
+  margin-top: 44px;
   position: relative;
-  right: 15px;
-}
-#AlanWalkerImg:hover {
-  opacity: 0.8;
-  transition: 1s;
+  right: 17px;
+  width: 64em;
 }
 
 #AlanWalkerImg2 {
@@ -263,12 +283,13 @@ input[type="search"] {
   /* border: 2px solid white; */
   width: 17%;
   position: absolute;
-  top: 2em;
+  top: -30px;
   left: 8em;
   font-size: 30px;
   text-align: center;
   color: white;
   font-style: italic;
+  /* z-index: 1; */
 }
 .SongQuote {
   /* border: 2px solid white; */
@@ -277,8 +298,8 @@ input[type="search"] {
   color: white;
   padding: 14px;
   font-style: italic;
-  position: relative;
-  top: 19em;
+  position: absolute;
+  top: 26em;
   width: 31em;
 }
 .Buttons_2 {
@@ -286,7 +307,7 @@ input[type="search"] {
   height: 92px;
   width: 29em;
   text-align: center;
-  position: relative;
+  position: absolute;
   top: 18em;
   left: 49px;
 }
@@ -297,6 +318,48 @@ input[type="search"] {
   border-radius: 24px;
   font-size: 19px;
   font-style: italic;
+}
+
+.PopUpBox {
+  width: 300px;
+  height: 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -219%);
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 1;
+  background-color: black;
+  border: 1.5px solid white;
+}
+#PopUpShow {
+  /* border: 2px solid white; */
+  display: inline-block;
+  position: absolute;
+  right: 80px;
+  top: 29px;
+  width: 17em;
+  color: white;
+}
+.PopUpBox input {
+  text-indent: 20px;
+  border: none;
+  border-radius: 6px;
+  width: 14em;
+  height: 34px;
+}
+.PopUpBox button {
+  width: 87px;
+  height: 25px;
+  margin: 14px;
+  border: 1px solid white;
+  border-radius: 7px;
+  font-size: small;
+}
+.PopUpBox button:hover {
+  background-color: #ff0c55;
 }
 #btn1 {
   border: 2px solid rgba(217, 31, 38, 255);
@@ -324,7 +387,6 @@ input[type="search"] {
   box-sizing: border-box;
   /* padding: 6px; */
   margin-top: 22px;
-  color: grey;
   font-weight: 600;
 }
 
@@ -333,6 +395,8 @@ input[type="search"] {
   color: #ff0c55;
 }
 #btn2 {
+  border: 2px solid white;
+
   color: rgba(217, 31, 38, 255);
   background-color: white;
 }
@@ -352,8 +416,8 @@ input[type="search"] {
   height: 17em;
   overflow-y: hidden;
   padding-top: 12px;
-  position: relative;
-  top: 4em;
+  position: absolute;
+  top: 35em;
   width: 63em;
 }
 ::-webkit-scrollbar {
@@ -389,8 +453,8 @@ input[type="search"] {
   font-style: italic;
   color: white;
   margin-left: 84px;
-  position: relative;
-  top: 14.5em;
+  position: absolute;
+  top: 22em;
   width: 17em;
   /* border: 2px solid white; */
 }
@@ -440,9 +504,9 @@ input[type="search"] {
   bottom: 0em;
   /* border: 2px solid white; */
   z-index: 1;
-  background-color: #272c2f;
-
   /* background-color: #272c2f; */
+  /* background-color: #272c2f; */
+  background-color: black;
 }
 .bottomBox:hover {
   cursor: pointer;
@@ -453,24 +517,27 @@ input[type="search"] {
   /* background-color: #21252e; */
   width: 200px;
   height: 79px;
-  margin: auto;
-  margin-top: 0px;
+  /* margin: auto; */
+  /* margin-top: 0px; */
   text-align: center;
+  position: relative;
+  left: 30em;
+  top: 8px;
 }
 .PlayPauseicon {
   /* position: relative; */
-  height: 3em;
+  height: 36px;
   margin-top: 16px;
   /* left: 627px; */
 }
 #backwardicon {
-  height: 3em;
+  height: 36px;
   margin-top: 16px;
   position: relative;
   left: -22px;
 }
 #forwardicon {
-  height: 3em;
+  height: 36px;
   margin-top: 16px;
   position: relative;
   left: 22px;
@@ -483,24 +550,21 @@ input[type="search"] {
   width: 40px;
   top: 45px;
   top: 20px;
-  left: 36em;
+  left: 27em;
 }
 
 #soundIcon {
   /* border: 2px solid white; */
   height: 34px;
-  width: 235px;
+  width: 178px;
   position: absolute;
   top: 25px;
-  right: 100px;
+  right: 33px;
 }
 #soundIcon img {
   /* border: 2px solid white; */
-  height: 30px;
-  width: 50px;
-  top: 45px;
-  top: 26px;
-  left: 62em;
+  height: 26px;
+  width: 40px;
 }
 
 .displaySongPoster {
@@ -518,19 +582,18 @@ input[type="search"] {
   border-radius: 6px;
   border: 0px;
   /* display: none; */
-
   /* display: none; */
+  position: absolute;
+  left: -106px;
 }
 
 #vibration {
-  height: 29px;
-  width: 26px;
-  position: relative;
-  top: -35px;
-  left: -46px;
+  height: 24px;
+  width: 18px;
+  position: absolute;
+  top: 11px;
+  left: -144px;
   opacity: 0.5;
-  /* display: none; */
-  /* border-radius: 6px; */
 }
 .SongDetails {
   /* border: 2px solid white; */
@@ -538,7 +601,7 @@ input[type="search"] {
   height: 45px;
   width: 296px;
   position: relative;
-  left: 275px;
+  left: 172px;
   top: -137px;
   box-sizing: border-box;
   font-size: 12px;
@@ -553,16 +616,29 @@ input[type="search"] {
   margin: auto;
   text-align: center;
   position: relative;
-  top: -221px;
+  top: -181px;
   cursor: pointer;
   /* border: 2px solid white; */
+  width: 32em;
+  left: 178px;
 }
 input[type="range"] {
   /* border: 2px solid white; */
-  width: 100%;
-  height: 3px;
   cursor: pointer;
   accent-color: #ff0c55;
+}
+
+input:focus {
+  outline: none; /* Removes the default focus outline */
+  border: none; /* If you want to remove border as well */
+}
+
+#ProgressBar {
+  position: absolute;
+  top: 21px;
+  left: 80px;
+  width: 68%;
+  height: 3px;
 }
 .Artists {
   /* border: 2px solid white; */
@@ -688,10 +764,10 @@ input[type="range"] {
   text-decoration: none;
 }
 #range_2 {
-  /* border: 2px solid white; */
-  height: 3px;
-  width: 155px;
-  margin-left: 21px;
+  border: 2px solid white;
+  height: 0px;
+  width: 114px;
+  margin-left: 14px;
 }
 .Timings {
   border: 2px solid white;
@@ -719,11 +795,12 @@ input[type="range"] {
   float: right;
 }
 
-.download img {
-  /* border: 2px solid white; */
-  height: 40px;
-  width: 40px;
-  position: relative;
-  top: -218px;
-  left: 48em;
+#DownloadOption img {
+  border: 1px solid darkseagreen;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  top: 24px;
+  right: 15em;
+  border-radius: 22px;
 }

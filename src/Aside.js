@@ -1,8 +1,10 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { musicList } from "./MasterPlay";
 import { weddingList } from "./WeddingList";
 import { emotionalList } from "./EmotionalList";
+import BottomBox from "./BottomBox"; // Import the new component
+import Header from "./Header";
+import PopUp from "./PopUp";
 
 let a = document.getElementsByClassName("PlayIcon");
 let b = document.getElementsByClassName("myAudios");
@@ -11,24 +13,13 @@ let f = document.getElementsByClassName("displaySongBox");
 let g = document.getElementsByClassName("SongDetails");
 
 function Aside() {
-  // To convert time into a formated time with minutes and seconds:-
-  function formatTime(seconds) {
-    let minutes = Math.floor(seconds / 60); ///5.653
-    let extraSeconds = Math.floor(seconds % 60);
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    extraSeconds = extraSeconds < 10 ? "0" + extraSeconds : extraSeconds;
-    let total = minutes + ":" + extraSeconds;
-    console.log(minutes, extraSeconds);
-    return total;
-  }
-
   // React Hook UseStates:-
   // State to hold the current volume
   const [volume, setVolume] = useState(1); // Assuming the initial volume is  1 (100%)
+  const [inputValue, setInputValue] = useState(""); // State to store input value
 
   let [idx_1, setIdx_1] = useState(0);
   let [index, setIndex] = useState(0);
-  let [initials_Timings, setInitials_Timings] = useState(0);
   let [currentValue, setCurrentValue] = useState(0);
   let [currentPlayList, setCurrentPlayList] = useState(musicList);
   let [currentTime, setCurrentTime] = useState(0);
@@ -76,6 +67,13 @@ function Aside() {
         V_selectAndPlay(prevSongIndex);
       }
     }
+  };
+
+  // Add this function to update the current playlist
+  const handleSearchChange = (newPlaylist) => {
+    setCurrentPlayList(newPlaylist);
+    setCurrentSongIndex(0); // Optionally reset to the first song
+    setIsPlaying(false); // Pause the song if you switch playlists
   };
 
   // verticall songs on left //--------------------------------
@@ -149,7 +147,7 @@ function Aside() {
       //console.log(b[i].currentTime.toFixed(2) + "Ye bhi chal rah hai");
 
       // When song is finished in Vertical Playlist :-
-      if (b[i].currentTime.toFixed(2) == b[i].duration.toFixed(2)) {
+      if (b[i].currentTime.toFixed(2) === b[i].duration.toFixed(2)) {
         b[i].pause();
         a[i].src = require("./images/mainplay.png");
         document.getElementById(
@@ -159,9 +157,9 @@ function Aside() {
       }
 
       let percentagePlayed;
-      setCurrentValue(
-        (percentagePlayed = (b[i].currentTime / b[i].duration) * 100)
-      );
+      // setCurrentValue(
+      percentagePlayed = (b[i].currentTime / b[i].duration) * 100;
+      // );
       // console.log("percentagePlayed==>" + percentagePlayed);
       // Update the progress bar value
       document.getElementById("ProgressBar").value = percentagePlayed;
@@ -214,14 +212,14 @@ function Aside() {
     console.log(i + 1 + " song is selected and is playing");
 
     ///// To find the timings of songs/////
-    setTotalTime(b[i].duration.toFixed(2));
+    setTotalTime(b[i].duration.toFixed(2) || 0);
 
     setIsPlaying(true);
     b[i].ontimeupdate = () => {
       setCurrentTime(b[i].currentTime);
 
       // When song is finished in Horizontal Playlist :-
-      if (b[i].currentTime.toFixed(2) == b[i].duration.toFixed(2)) {
+      if (b[i].currentTime.toFixed(2) === b[i].duration.toFixed(2)) {
         b[i].pause();
         e[i - 12].src = require("./images/icon.png");
         document.getElementById(
@@ -299,6 +297,7 @@ function Aside() {
   };
 
   //masterplay:-
+
   let togglePlayPause = (inds) => {
     // Update the current song index
     setCurrentSongIndex(inds);
@@ -373,26 +372,34 @@ function Aside() {
         console.log(inds + 1 + " song is playing. Got it in Masterplay!");
       }
     }
+
+    // Download Song
+    const audioSource = b[inds].src; // Assuming b[inds] is the audio element
+    const downloadLink = document.getElementById("downloadLink");
+    downloadLink.href = audioSource; // Set the song file URL to the download button
+    downloadLink.download = `song${inds + 1}.mp3`; // Dynamically set the filename
   };
-  // To control Volume:-
-  const handleVolumeClick = (event) => {
-    // Get the input element
-    const volumeInput = event.target;
-    // Calculate the percentage of the click position within the input range
-    const clickPercentage =
-      (event.clientX - volumeInput.getBoundingClientRect().left) /
-      volumeInput.offsetWidth;
-    // Set the new volume based on the click position
-    const newVolume = Math.min(Math.max(clickPercentage, 0), 1);
+  const handleProgressBarChange = (e) => {
+    const percentage = e.target.value; // Get the percentage from the progress bar
+    const newTime = (percentage / 100) * totalTime; // Calculate the corresponding time
+    b[currentSongIndex].currentTime = newTime; // Update the song to the new time
+  };
+
+  const handleVolumeChange = (event) => {
+    // Get the new volume from the input value
+    const newVolume = parseFloat(event.target.value);
+
     // Update the audio volume and the input value
     b[idx_1].volume = newVolume;
 
     // Update the state to reflect the new volume
     setVolume(newVolume);
 
-    volumeInput.value = newVolume * 200;
-
-    document.getElementById("range_2").value = newVolume;
+    // Optional: Update another visual representation of the volume if needed
+    document.getElementById("range_2").value = newVolume; // This might not be necessary since you're already binding value
+  };
+  const handleInputChange = (value) => {
+    setInputValue(value);
   };
 
   // Vertical song in a playlist:-
@@ -448,6 +455,9 @@ function Aside() {
 
   return (
     <>
+      <Header inputValue={inputValue} onPlaylistChange={handleSearchChange} />
+      <PopUp onInputChange={handleInputChange} />
+
       <div className="MusicListBigBox">
         <div id="back_2"></div>
         <div className="OnlyMusicList">
@@ -463,7 +473,7 @@ function Aside() {
 
         <div className="MusicStuffs">
           <p>Music_Studio</p>
-          <img src={require("./images/where.webp")} id="AlanWalkerImg"></img>
+          <img src={require("./images/gifs.webp")} id="AlanWalkerImg"></img>
           {/* <img src={require("./images/faded.webp")} id="AlanWalkerImg2"></img> */}
 
           {/* <img src={require("./images/faded2.jpg")} id="AlanWalkerImg3"></img> */}
@@ -500,6 +510,7 @@ function Aside() {
           <div className="PopularSongs"> Popular Songs</div>
 
           {/* ----------------------Horizontal Song Display------------------------ */}
+
           <div className="SongsinLine">
             {listItems_2}
             <div className="OnFading">
@@ -509,67 +520,19 @@ function Aside() {
         </div>
       </div>
 
-      <div className="bottomBox">
-        <div className="AllIconsOfSongs">
-          <img
-            src={require("./images/backwardd.jpeg")}
-            id="backwardicon"
-            onClick={() => OneBackward(index)}
-          ></img>
-          <img
-            src={require("./images/playbtn.png")}
-            className="PlayPauseicon"
-            id="masterPlay"
-            onClick={() => togglePlayPause(idx_1)}
-          ></img>
-          <img
-            src={require("./images/forwardd.jpeg")}
-            id="forwardicon"
-            onClick={() => OneForward(index)}
-          ></img>
-        </div>
-        <div className="displaySongPoster">
-          <img
-            className="displaySongBox"
-            src={require("./images/haunted.webp")}
-          ></img>
-          <img src={require("./images/bb.jpg")} id="vibration"></img>
-        </div>
-        <div className="SongDetails">
-          Tera Hi Bus Hona Chaahoon
-          <br></br>
-          JoJo , Haunted
-        </div>
-        <div id="musicIcon">
-          <img src={require("./images/music icon.png")}></img>
-        </div>
-        <div id="soundIcon">
-          <img src={require("./images/soundIcon.png")}></img>
-          <input
-            type="range"
-            min="0"
-            max="1"
-            value={1}
-            step="0.1"
-            id="range_2"
-            onClick={handleVolumeClick}
-          ></input>
-
-          {/* <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1"></input> */}
-        </div>
-        <div className="Range">
-          <input
-            type="range"
-            min="0"
-            max="100"
-            value={currentValue}
-            step="1"
-            id="ProgressBar"
-          ></input>
-          <div id="initials_Timings">{formatTime(currentTime)}</div>
-          <div id="song_Timings">{formatTime(totalTime)}</div>
-        </div>
-      </div>
+      <BottomBox
+        togglePlayPause={togglePlayPause}
+        currentTime={currentTime}
+        totalTime={totalTime}
+        volume={volume}
+        OneBackward={OneBackward}
+        OneForward={OneForward}
+        handleVolumeChange={handleVolumeChange}
+        handleProgressBarChange={handleProgressBarChange}
+        index={index} // Pass current index
+        idx_1={idx_1} // Pass next song index
+        currentValue={currentValue} // Pass current time value
+      />
     </>
   );
 }
