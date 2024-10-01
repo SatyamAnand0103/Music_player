@@ -14,14 +14,13 @@ const BottomBox = ({
   currentValue,
 }) => {
   // To convert time into a formated time with minutes and seconds:-
-
   function formatTime(seconds) {
     let minutes = Math.floor(seconds / 60); ///5.653
     let extraSeconds = Math.floor(seconds % 60);
     minutes = minutes < 10 ? "0" + minutes : minutes;
     extraSeconds = extraSeconds < 10 ? "0" + extraSeconds : extraSeconds;
     let total = minutes + ":" + extraSeconds;
-    console.log(minutes, extraSeconds);
+    // console.log(minutes, extraSeconds);
     return total;
   }
 
@@ -62,7 +61,6 @@ const BottomBox = ({
 
         <div>
           {/* Download Button */}
-
           <div id="DownloadOption">
             <a id="downloadLink" download="song.mp3">
               <img src={require("./images/downld.gif")} alt="Download" />

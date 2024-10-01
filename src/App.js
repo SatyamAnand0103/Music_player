@@ -7,9 +7,7 @@ import Footer from "./Footer";
 function App() {
   return (
     <>
-      {/* <Header /> */}
       <CarouselPage />
-      {/* <PopUp /> */}
       <Aside />
       <Footer />
     </>

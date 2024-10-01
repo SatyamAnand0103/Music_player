@@ -5,66 +5,83 @@ import { weddingList } from "./WeddingList";
 
 function Header({ onPlaylistChange, inputValue }) {
   let [value, setValue] = useState("");
+  let [isvisible, setIsvisible] = useState(false);
+  let [details, setDetails] = useState("");
 
   let textOnSearch = (e) => {
     setValue(e.target.value);
   };
-  console.log(value);
 
   let Search_song = () => {
-    document.getElementById("detailsBox").style.display = "block";
+    // alert("Its working here");
 
-    setInterval(() => {
-      document.getElementById("detailsBox").style.display = "none";
+    setIsvisible(true);
+    setTimeout(() => {
+      setIsvisible(false);
     }, 12000);
 
+    // };
+
     if (value === "") {
-      document.getElementById("detailsBox").innerHTML =
-        "Search Song in Search Bar !";
-    } else {
-      for (let i = 0; i < 21; i++) {
-        if (musicList[i].name.toLowerCase().includes(value.toLowerCase())) {
-          onPlaylistChange(musicList);
-          document.getElementById("detailsBox").innerHTML =
-            "Song is present in My PlayList Songs on " +
-            (i + 1) +
-            " " +
-            "Position";
-          // currentPlayList[i].id +
-          // " position";
+      setDetails("Search Song in Search Bar !");
+    }
+    // for (let i = 0; i < 21; i++) {
 
-          break;
-        } else if (
-          weddingList[i].name.toLowerCase().includes(value.toLowerCase())
-        ) {
-          onPlaylistChange(weddingList);
-          document.getElementById("detailsBox").innerHTML =
-            "Song is present in Wedding Songs on " + (i + 1) + " " + "Position";
-          // currentPlayList[i].id +
-          // " position";
-          break;
-        } else if (
-          emotionalList[i].name.toLowerCase().includes(value.toLowerCase())
-        ) {
-          onPlaylistChange(emotionalList);
-          document.getElementById("detailsBox").innerHTML =
-            "Song is present in Emotional Songs on " +
-            (i + 1) +
-            " " +
-            "Position";
-          // currentPlayList[i].id +
-          // " position";
+    let foundSong = musicList.find((song) =>
+      song.name.toLowerCase().includes(value.toLowerCase())
+    );
 
-          break;
-        } else if (
-          !musicList[i].name.toLowerCase().includes(value) ||
-          !weddingList[i].name.toLowerCase().includes(value) ||
-          !emotionalList[i].name.toLowerCase().includes(value)
-        ) {
-          document.getElementById("detailsBox").innerHTML =
-            "song does not found !";
-        }
-      }
+    if (foundSong) {
+      onPlaylistChange(musicList);
+      setDetails(
+        "Song is present in My PlayList Songs on " +
+          (musicList.indexOf(foundSong) + 1) +
+          " " +
+          "Position"
+      );
+      // currentPlayList[i].id +
+      // " position";
+      return;
+    }
+
+    let foundWedSong = weddingList.find((song) =>
+      song.name.toLowerCase().includes(value.toLowerCase())
+    );
+
+    if (foundWedSong) {
+      onPlaylistChange(weddingList);
+      setDetails(
+        "Song is present in Wedding Songs on " +
+          (weddingList.indexOf(foundWedSong) + 1) +
+          " " +
+          "Position"
+      );
+      // currentPlayList[i].id +
+      // " position";
+      return;
+    }
+
+    let foundEmotSong = emotionalList.find((song) =>
+      song.name.toLowerCase().includes(value.toLowerCase())
+    );
+
+    if (foundEmotSong) {
+      onPlaylistChange(emotionalList);
+      setDetails(
+        "Song is present in Emotional Songs on " +
+          (emotionalList.indexOf(foundEmotSong) + 1) +
+          " " +
+          "Position"
+      );
+      // currentPlayList[i].id +
+      // " position";
+      return;
+    }
+    // !musicList.find((song) => song.name.toLowerCase().includes(value)) ||
+    // !weddingList.find((song) => song.name.toLowerCase().includes(value)) ||
+    // !emotionalList.find((song) => song.name.toLowerCase().includes(value))
+    else {
+      setDetails("song does not found !");
     }
   };
   return (
@@ -84,7 +101,12 @@ function Header({ onPlaylistChange, inputValue }) {
         <div className="searchBox" onClick={Search_song}>
           <img src={require("./images/search.jpg")}></img>
         </div>
-        <div id="detailsBox"> </div>
+
+        {isvisible && (
+          <div id="detailsBox" style={{ display: "block" }}>
+            {details}{" "}
+          </div>
+        )}
         <div id="PopUpShow">Welcome {inputValue.toUpperCase() + "👦"}</div>
       </div>
 

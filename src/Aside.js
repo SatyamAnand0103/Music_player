@@ -13,11 +13,8 @@ let f = document.getElementsByClassName("displaySongBox");
 let g = document.getElementsByClassName("SongDetails");
 
 function Aside() {
-  // React Hook UseStates:-
-  // State to hold the current volume
   const [volume, setVolume] = useState(1); // Assuming the initial volume is  1 (100%)
   const [inputValue, setInputValue] = useState(""); // State to store input value
-
   let [idx_1, setIdx_1] = useState(0);
   let [index, setIndex] = useState(0);
   let [currentValue, setCurrentValue] = useState(0);
@@ -79,25 +76,25 @@ function Aside() {
   // verticall songs on left //--------------------------------
   const V_selectAndPlay = (i) => {
     setIdx_1(i);
-
-    console.log(i + 1 + " song is selected and is playing");
-    ///// To find the timings of songs/////
+    // console.log(i + 1 + " song is selected and is playing");
+    // To find the timings of songs
     setTotalTime(b[i].duration.toFixed(2));
 
-    for (let k = 0; k < currentPlayList.length; k++) {
-      b[k].pause();
-    }
-
-    for (let k = 0; k < 9; k++) {
-      if (i < 12)
-        document.getElementsByClassName("SongsitemInLine")[
-          k
-        ].style.borderBottom = "0px solid black";
-    }
+    // for (let k = 0; k < currentPlayList.length; k++) {
+    //   b[k].pause();
+    // }
+    Array.from(b).forEach((audio) => {
+      audio.pause();
+    });
+    // for (let k = 0; k < 9; k++) {
+    //   if (i < 12)
+    //     document.getElementsByClassName("SongsitemInLine")[
+    //       k
+    //     ].style.borderBottom = "10px solid red";
+    // }
 
     for (let n = 0; n < 12; n++) {
       a[n].src = require("./images/mainplay.png");
-
       document.getElementsByClassName("songsItem")[n].style.backgroundColor =
         "#0b0f12";
     }
@@ -141,8 +138,8 @@ function Aside() {
     setIsPlaying(true);
     b[i].ontimeupdate = () => {
       setCurrentTime(b[i].currentTime);
-      // setCurrentTime(b[i].currentTime);
 
+      // setCurrentTime(b[i].currentTime);
       //console.log(b[i].duration.toFixed(2) + " ye chal raha hai");
       //console.log(b[i].currentTime.toFixed(2) + "Ye bhi chal rah hai");
 
@@ -157,10 +154,8 @@ function Aside() {
       }
 
       let percentagePlayed;
-      // setCurrentValue(
       percentagePlayed = (b[i].currentTime / b[i].duration) * 100;
       // );
-      // console.log("percentagePlayed==>" + percentagePlayed);
       // Update the progress bar value
       document.getElementById("ProgressBar").value = percentagePlayed;
     };
@@ -237,10 +232,12 @@ function Aside() {
     };
 
     // console.log(currentTime + " update or not !");
-    for (let k = 0; k < currentPlayList.length; k++) {
-      b[k].pause();
-    }
-
+    // for (let k = 0; k < currentPlayList.length; k++) {
+    //   b[k].pause();
+    // }
+    Array.from(b).forEach((audio) => {
+      audio.pause();
+    });
     document.getElementById(
       "masterPlay"
     ).src = require("./images/pausebtn.png");
@@ -249,35 +246,44 @@ function Aside() {
       a[n].src = require("./images/mainplay.png");
     }
 
-    for (let m = 0; m < 10; m++) {
-      if (i == 12) {
-        e[0].src = require("./images/icon2.png");
+    // for (let m = 0; m < 10; m++) {
+    //   if (i == 12) {
+    //     e[0].src = require("./images/icon2.png");
 
-        e[m].src = require("./images/icon.png");
-      } else if (i == 13) {
-        e[1].src = require("./images/icon2.png");
-        e[m].src = require("./images/icon.png");
-      } else if (i == 14) {
-        e[2].src = require("./images/icon2.png");
-        e[m].src = require("./images/icon.png");
-      } else if (i == 15) {
-        e[3].src = require("./images/icon2.png");
-        e[m].src = require("./images/icon.png");
-      } else if (i == 16) {
-        e[4].src = require("./images/icon2.png");
-        e[m].src = require("./images/icon.png");
-      } else if (i == 17) {
-        e[5].src = require("./images/icon2.png");
-        e[m].src = require("./images/icon.png");
-      } else if (i == 18) {
-        e[6].src = require("./images/icon2.png");
-        e[m].src = require("./images/icon.png");
-      } else if (i == 19) {
-        e[7].src = require("./images/icon2.png");
-        e[m].src = require("./images/icon.png");
-      } else if (i == 20) {
-        e[8].src = require("./images/icon2.png");
-        e[m].src = require("./images/icon.png");
+    //     e[m].src = require("./images/icon.png");
+    //   } else if (i == 13) {
+    //     e[1].src = require("./images/icon2.png");
+    //     e[m].src = require("./images/icon.png");
+    //   } else if (i == 14) {
+    //     e[2].src = require("./images/icon2.png");
+    //     e[m].src = require("./images/icon.png");
+    //   } else if (i == 15) {
+    //     e[3].src = require("./images/icon2.png");
+    //     e[m].src = require("./images/icon.png");
+    //   } else if (i == 16) {
+    //     e[4].src = require("./images/icon2.png");
+    //     e[m].src = require("./images/icon.png");
+    //   } else if (i == 17) {
+    //     e[5].src = require("./images/icon2.png");
+    //     e[m].src = require("./images/icon.png");
+    //   } else if (i == 18) {
+    //     e[6].src = require("./images/icon2.png");
+    //     e[m].src = require("./images/icon.png");
+    //   } else if (i == 19) {
+    //     e[7].src = require("./images/icon2.png");
+    //     e[m].src = require("./images/icon.png");
+    //   } else if (i == 20) {
+    //     e[8].src = require("./images/icon2.png");
+    //     e[m].src = require("./images/icon.png");
+    //   }
+    // }
+
+    for (let m = 0; m < 10; m++) {
+      if (i >= 12 && i <= 20) {
+        e[m].src = require("./images/icon.png"); // Set all to icon.png by default
+        if (m === i - 12) {
+          e[m].src = require("./images/icon2.png"); // Set the specific one to icon2.png
+        }
       }
     }
     b[i].load();
@@ -297,7 +303,6 @@ function Aside() {
   };
 
   //masterplay:-
-
   let togglePlayPause = (inds) => {
     // Update the current song index
     setCurrentSongIndex(inds);
@@ -308,7 +313,6 @@ function Aside() {
     b[inds].ontimeupdate = () => {
       setCurrentTime(b[inds].currentTime);
       //When no song is selected an default song has player:-
-
       if (b[inds].currentTime.toFixed(2) == b[inds].duration.toFixed(2)) {
         b[inds].pause();
         document.getElementById(
@@ -335,28 +339,21 @@ function Aside() {
             "masterPlay"
           ).src = require("./images/pausebtn.png");
           document.getElementById("vibration").src = require("./images/ab.gif");
-
-          document.getElementById(
-            "masterPlay"
-          ).src = require("./images/pausebtn.png");
           if (inds > 11) {
             e[inds - 12].src = require("./images/icon2.png");
           }
           if (inds <= 11) {
             a[inds].src = require("./images/pausebutton.png");
           }
-
           b[k].play();
           setIsPlaying(true);
         } else {
           document.getElementById(
             "masterPlay"
           ).src = require("./images/playbtn.png");
-          document.getElementById("vibration").style.display = "block";
+
+          // document.getElementById("vibration").style.display = "block";
           document.getElementById("vibration").src = require("./images/bb.jpg");
-          document.getElementById(
-            "masterPlay"
-          ).src = require("./images/playbtn.png");
 
           if (inds > 11) {
             e[inds - 12].src = require("./images/icon.png");
@@ -366,19 +363,20 @@ function Aside() {
           }
 
           b[k].pause();
-
           setIsPlaying(false);
         }
-        console.log(inds + 1 + " song is playing. Got it in Masterplay!");
+        // console.log(inds + 1 + " song is playing. Got it in Masterplay!");
       }
     }
 
     // Download Song
-    const audioSource = b[inds].src; // Assuming b[inds] is the audio element
+
+    const audioSource = b[inds].src;
     const downloadLink = document.getElementById("downloadLink");
-    downloadLink.href = audioSource; // Set the song file URL to the download button
-    downloadLink.download = `song${inds + 1}.mp3`; // Dynamically set the filename
+    downloadLink.href = audioSource;
+    downloadLink.download = `song${inds + 1}.mp3`; //
   };
+
   const handleProgressBarChange = (e) => {
     const percentage = e.target.value; // Get the percentage from the progress bar
     const newTime = (percentage / 100) * totalTime; // Calculate the corresponding time
@@ -388,21 +386,19 @@ function Aside() {
   const handleVolumeChange = (event) => {
     // Get the new volume from the input value
     const newVolume = parseFloat(event.target.value);
-
     // Update the audio volume and the input value
     b[idx_1].volume = newVolume;
-
     // Update the state to reflect the new volume
     setVolume(newVolume);
-
-    // Optional: Update another visual representation of the volume if needed
-    document.getElementById("range_2").value = newVolume; // This might not be necessary since you're already binding value
+    document.getElementById("range_2").value = newVolume;
   };
+
   const handleInputChange = (value) => {
     setInputValue(value);
   };
 
   // Vertical song in a playlist:-
+
   const listItems_1 = currentPlayList
     .filter(function (eachSong) {
       return eachSong.id < 13;
@@ -430,6 +426,7 @@ function Aside() {
     ));
 
   //  Horizontal song playing:-
+
   let listItems_2 = currentPlayList
     .filter(function (eachSong) {
       return eachSong.id >= 13;
@@ -474,9 +471,6 @@ function Aside() {
         <div className="MusicStuffs">
           <p>Music_Studio</p>
           <img src={require("./images/gifs.webp")} id="AlanWalkerImg"></img>
-          {/* <img src={require("./images/faded.webp")} id="AlanWalkerImg2"></img> */}
-
-          {/* <img src={require("./images/faded2.jpg")} id="AlanWalkerImg3"></img> */}
 
           <div className="dropBox">
             <span className="PlaylistHeading">Playlist</span>
@@ -520,6 +514,7 @@ function Aside() {
         </div>
       </div>
 
+      {/* Passing functions as props */}
       <BottomBox
         togglePlayPause={togglePlayPause}
         currentTime={currentTime}
@@ -529,9 +524,9 @@ function Aside() {
         OneForward={OneForward}
         handleVolumeChange={handleVolumeChange}
         handleProgressBarChange={handleProgressBarChange}
-        index={index} // Pass current index
-        idx_1={idx_1} // Pass next song index
-        currentValue={currentValue} // Pass current time value
+        index={index}
+        idx_1={idx_1}
+        currentValue={currentValue}
       />
     </>
   );
