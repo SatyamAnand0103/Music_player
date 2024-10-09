@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { musicList } from "./MasterPlay";
 import { weddingList } from "./WeddingList";
 import { emotionalList } from "./EmotionalList";
 import BottomBox from "./BottomBox"; // Import the new component
 import Header from "./Header";
-import PopUp from "./PopUp";
 
 let a = document.getElementsByClassName("PlayIcon");
 let b = document.getElementsByClassName("myAudios");
@@ -168,6 +167,7 @@ function Aside() {
       "masterPlay"
     ).src = require("./images/pausebtn.png");
     inds = i;
+    onDownload(inds);
   };
 
   /////////////////////////////////////////////////////////
@@ -299,11 +299,22 @@ function Aside() {
       " , " +
       " " +
       currentPlayList[i].movie;
+
     inds = i;
+    onDownload(inds);
+  };
+
+  // Download Song
+  let onDownload = (inds) => {
+    const audioSource = b[inds].src;
+    const downloadLink = document.getElementById("downloadLink");
+    downloadLink.href = audioSource;
+    downloadLink.download = `song${inds + 1}.mp3`; //
   };
 
   //masterplay:-
   let togglePlayPause = (inds) => {
+    onDownload(inds);
     // Update the current song index
     setCurrentSongIndex(inds);
     //console.log(b[inds].duration);
@@ -368,13 +379,6 @@ function Aside() {
         // console.log(inds + 1 + " song is playing. Got it in Masterplay!");
       }
     }
-
-    // Download Song
-
-    const audioSource = b[inds].src;
-    const downloadLink = document.getElementById("downloadLink");
-    downloadLink.href = audioSource;
-    downloadLink.download = `song${inds + 1}.mp3`; //
   };
 
   const handleProgressBarChange = (e) => {
@@ -393,9 +397,9 @@ function Aside() {
     document.getElementById("range_2").value = newVolume;
   };
 
-  const handleInputChange = (value) => {
-    setInputValue(value);
-  };
+  // const handleInputChange = (e) => {
+  //   setInputValue(e);
+  // };
 
   // Vertical song in a playlist:-
 
@@ -453,7 +457,7 @@ function Aside() {
   return (
     <>
       <Header inputValue={inputValue} onPlaylistChange={handleSearchChange} />
-      <PopUp onInputChange={handleInputChange} />
+      {/* <PopUp onInputChange={handleInputChange} /> */}
 
       <div className="MusicListBigBox">
         <div id="back_2"></div>
@@ -527,6 +531,7 @@ function Aside() {
         index={index}
         idx_1={idx_1}
         currentValue={currentValue}
+        onDownload={onDownload}
       />
     </>
   );

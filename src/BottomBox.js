@@ -61,7 +61,7 @@ const BottomBox = ({
 
         <div>
           {/* Download Button */}
-          <div id="DownloadOption">
+          <div id="DownloadOption"  >
             <a id="downloadLink" download="song.mp3">
               <img src={require("./images/downld.gif")} alt="Download" />
             </a>

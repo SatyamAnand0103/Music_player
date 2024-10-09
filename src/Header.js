@@ -3,7 +3,8 @@ import { musicList } from "./MasterPlay";
 import { emotionalList } from "./EmotionalList";
 import { weddingList } from "./WeddingList";
 
-function Header({ onPlaylistChange, inputValue }) {
+function Header(props) {
+  const [inputValue, setInputValue] = useState("");
   let [value, setValue] = useState("");
   let [isvisible, setIsvisible] = useState(false);
   let [details, setDetails] = useState("");
@@ -14,7 +15,6 @@ function Header({ onPlaylistChange, inputValue }) {
 
   let Search_song = () => {
     // alert("Its working here");
-
     setIsvisible(true);
     setTimeout(() => {
       setIsvisible(false);
@@ -32,7 +32,7 @@ function Header({ onPlaylistChange, inputValue }) {
     );
 
     if (foundSong) {
-      onPlaylistChange(musicList);
+      props.onPlaylistChange(musicList);
       setDetails(
         "Song is present in My PlayList Songs on " +
           (musicList.indexOf(foundSong) + 1) +
@@ -49,7 +49,7 @@ function Header({ onPlaylistChange, inputValue }) {
     );
 
     if (foundWedSong) {
-      onPlaylistChange(weddingList);
+      props.onPlaylistChange(weddingList);
       setDetails(
         "Song is present in Wedding Songs on " +
           (weddingList.indexOf(foundWedSong) + 1) +
@@ -66,7 +66,7 @@ function Header({ onPlaylistChange, inputValue }) {
     );
 
     if (foundEmotSong) {
-      onPlaylistChange(emotionalList);
+      props.onPlaylistChange(emotionalList);
       setDetails(
         "Song is present in Emotional Songs on " +
           (emotionalList.indexOf(foundEmotSong) + 1) +
@@ -84,6 +84,7 @@ function Header({ onPlaylistChange, inputValue }) {
       setDetails("song does not found !");
     }
   };
+
   return (
     <>
       <div className="containerBox">
@@ -107,7 +108,6 @@ function Header({ onPlaylistChange, inputValue }) {
             {details}{" "}
           </div>
         )}
-        <div id="PopUpShow">Welcome {inputValue.toUpperCase() + "👦"}</div>
       </div>
 
       {/* <div className="Listofitems">
